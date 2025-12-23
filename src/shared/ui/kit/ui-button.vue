@@ -20,7 +20,6 @@ const props = withDefaults(defineProps<UiButtonProps>(), {
 
 
 const className = getButtonClassNames(props)
-
 </script>
 
 <template>

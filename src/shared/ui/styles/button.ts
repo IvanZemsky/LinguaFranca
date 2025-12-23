@@ -9,9 +9,9 @@ export const ButtonStyles = {
     },
     ghost: {
       primary:
-        "text-neutral hover:bg-violet-50 active:bg-violet-100",
+        "text-neutral-900 hover:bg-violet-50 active:bg-violet-100",
       secondary:
-        "text-neutral hover:bg-blue-50 active:bg-blue-100",
+        "text-neutral-900 hover:bg-blue-50 active:bg-blue-100",
     },
   },
   sizes: {

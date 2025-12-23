@@ -15,7 +15,6 @@ const props = withDefaults(defineProps<Omit<UiButtonProps, "as">>(), {
 const attrs = useAttrs()
 
 const className = getButtonClassNames(props)
-
 </script>
 
 <template>

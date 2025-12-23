@@ -3,6 +3,7 @@
 </script>
 
 <template>
-  123
-  <NuxtPage />
+  <div class="text-neutral-900">
+    <NuxtPage />
+  </div>
 </template>
