@@ -4,19 +4,17 @@ import { UiButton } from "@@/src/shared/ui"
 
 <template>
     <div class="p-4">
-        <UiButton size="sm">
+        <UiButton variant="ghost" size="sm">
             Button
         </UiButton>
-        <UiButton>
+        <UiButton variant="ghost" color="secondary">
             Button
         </UiButton>
-        <UiButton size="lg">
+        <UiButton variant="ghost" size="lg">
             Button
         </UiButton>
         <p class="text-red-500">fgfdg</p>
     </div>
-
-
 </template>
 
 <style scoped></style>

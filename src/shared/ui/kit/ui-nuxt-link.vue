@@ -2,7 +2,7 @@
 import type { UiButtonProps } from "./ui-button.vue"
 import { NuxtLink } from "#components"
 import { useAttrs } from "vue";
-import { ButtonStyles } from "../styles/button";
+import { getButtonClassNames } from "../styles/button";
 
 const props = withDefaults(defineProps<Omit<UiButtonProps, "as">>(), {
     variant: "filled",
@@ -12,17 +12,9 @@ const props = withDefaults(defineProps<Omit<UiButtonProps, "as">>(), {
     rounded: false,
 })
 
-const { variant, size, color } = props
-
 const attrs = useAttrs()
 
-
-
-const className = [
-    "outline-blue-500 cursor-pointer transition",
-    ButtonStyles.variants[variant][color],
-    ButtonStyles.sizes[size],
-]
+const className = getButtonClassNames(props)
 
 </script>
 

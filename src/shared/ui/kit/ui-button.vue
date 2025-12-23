@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ButtonStyles } from "../styles/button";
+import { getButtonClassNames } from "../styles/button";
 
 export type UiButtonProps = {
     as?: string
@@ -18,13 +18,8 @@ const props = withDefaults(defineProps<UiButtonProps>(), {
     rounded: false,
 })
 
-const { as, variant, size, color } = props
 
-const className = [
-    "outline-blue-500 cursor-pointer transition",
-    ButtonStyles.variants[variant][color],
-    ButtonStyles.sizes[size],
-]
+const className = getButtonClassNames(props)
 
 </script>
 
