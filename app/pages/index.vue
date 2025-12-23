@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="text-3xl">
+    <div class="text-3xl font-bold">
         Hello world
     </div>
 </template>

@@ -2,8 +2,13 @@
 export default {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        philosopher: ["Philosopher", "serif"],
+        system: ["system-ui", "sans-serif"],
+      },
+    },
   },
   plugins: [],
-}
-
+};
