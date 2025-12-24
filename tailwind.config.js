@@ -13,7 +13,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        philosopher: ["Philosopher", "serif"],
+        lora: ["lora", "serif"],
         system: ["system-ui", "sans-serif"],
       },
     },

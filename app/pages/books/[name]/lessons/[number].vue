@@ -1,18 +1,47 @@
 <script setup lang="ts">
-import { LessonNote } from "@@/src/features/lesson"
+import { LessonText } from "@@/src/features/lesson"
+
+const data = {
+    title: "Dies in urbe ",
+    translation: "День в городе",
+    text: "Amīcus meus, Gāius, in urbē magnā habitat. Gāī fīlius, Quīntus, est puer laetus. Hodie, Quīntus et soror sua, Aemilia, ad forum ambulant. Pater īs pecūniam dat. Puerī et puellae in viīs urbis gaudent. In forō, multī virī et fēminae laborant. Aemilia tunicam novam et pallam pulchram dēsīderat. Quīntus gladīum lūdeum et pīlum parvum spectat. Mercātor amīcus eōs salūtat et eīs dōna parva offert. \n\nPost forum, līberī ad lūdum eunt. Magister, vir doctus, līberōs docet.Discipulī et discipulae in tabellīs scrībunt et carmina parva legunt.Quīntus numerōs amat, Aemilia fābulās dē deīs et deābus dēsīderat.Hōra multa labōrat.Puerī et puellae dēfessī sunt. Ad vīllam redeunt. Māter eōs cēna bonā cībat. Post cēnam, patrī et mātrī fābulās longās nārrānt. Nocte, sommus eōs cāpit.",
+    vocabulary: [
+        {
+            word: "Amici",
+            translation: "друзья"
+        },
+        {
+            word: "Meus",
+            translation: "мой"
+        },
+        {
+            word: "Amici",
+            translation: "друзья"
+        },
+        {
+            word: "Amici",
+            translation: "друзья"
+        },
+        {
+            word: "Amici",
+            translation: "друзья"
+        },
+        {
+            word: "Amici",
+            translation: "друзья"
+        },
+        {
+            word: "Amici",
+            translation: "друзья"
+        }
+
+
+    ]
+}
 </script>
 
 <template>
     <div class="p-4">
-        <LessonNote>
-            <template #header>Note title</template>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
-        </LessonNote>
+        <LessonText :data="data" />
     </div>
 </template>
-
-<style scoped></style>
