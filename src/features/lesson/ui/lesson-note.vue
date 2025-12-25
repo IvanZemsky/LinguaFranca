@@ -10,7 +10,9 @@
                 i
             </div>
 
-            <slot name="header" />
+            <p>
+                <slot name="header" />
+            </p>
         </div>
 
         <p class="font-playfair text-[14px]">

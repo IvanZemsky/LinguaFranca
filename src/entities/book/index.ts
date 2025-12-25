@@ -1,0 +1,1 @@
+export type {Book, BookID} from "./model/types"
