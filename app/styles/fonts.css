@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "Inter";
-  src: local("Inter-Regular"),
+  src:
+    local("Inter-Regular"),
     url("../../src/shared/assets/fonts/inter/Inter_18pt-Regular.ttf")
       format("truetype");
   font-weight: 400;
@@ -11,7 +12,8 @@
 
 @font-face {
   font-family: "Inter";
-  src: local("Inter-Medium"),
+  src:
+    local("Inter-Medium"),
     url("../../src/shared/assets/fonts/inter/Inter_18pt-Medium.ttf")
       format("truetype");
   font-weight: 500;
@@ -20,7 +22,8 @@
 
 @font-face {
   font-family: "Inter";
-  src: local("Inter-SemiBold"),
+  src:
+    local("Inter-SemiBold"),
     url("../../src/shared/assets/fonts/inter/Inter_18pt-SemiBold.ttf")
       format("truetype");
   font-weight: 600;
@@ -29,7 +32,8 @@
 
 @font-face {
   font-family: "Inter";
-  src: local("Inter-Bold"),
+  src:
+    local("Inter-Bold"),
     url("../../src/shared/assets/fonts/inter/Inter_18pt-Bold.ttf")
       format("truetype");
   font-weight: 700;
@@ -40,7 +44,8 @@
 
 @font-face {
   font-family: "Lora";
-  src: local("Lora-Regular"),
+  src:
+    local("Lora-Regular"),
     url("../../src/shared/assets/fonts/lora/Lora-Regular.ttf")
       format("truetype");
   font-weight: 400;
@@ -49,16 +54,17 @@
 
 @font-face {
   font-family: "Lora";
-  src: local("Lora-Medium"),
-    url("../../src/shared/assets/fonts/lora/Lora-Medium.ttf")
-      format("truetype");
+  src:
+    local("Lora-Medium"),
+    url("../../src/shared/assets/fonts/lora/Lora-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lora";
-  src: local("Lora-SemiBold"),
+  src:
+    local("Lora-SemiBold"),
     url("../../src/shared/assets/fonts/lora/Lora-SemiBold.ttf")
       format("truetype");
   font-weight: 600;
@@ -67,9 +73,9 @@
 
 @font-face {
   font-family: "Lora";
-  src: local(" Lora-Bold"),
-    url("../../src/shared/assets/fonts/lora/Lora-Bold.ttf")
-      format("truetype");
+  src:
+    local(" Lora-Bold"),
+    url("../../src/shared/assets/fonts/lora/Lora-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }

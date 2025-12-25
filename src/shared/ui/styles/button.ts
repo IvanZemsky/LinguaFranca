@@ -1,4 +1,4 @@
-import type { UiButtonProps } from "../kit/ui-button.vue";
+import type { UiButtonProps } from "../kit/ui-button.vue"
 
 export const ButtonStyles = {
   variants: {
@@ -17,7 +17,7 @@ export const ButtonStyles = {
     md: "gap-[8px] text-[18px] py-2 px-5 rounded-[12px] [&>svg]:w-5",
     lg: "gap-[10px] text-[18px] py-4 px-5 rounded-[16px] min-w-[120px] [&>svg]:w-5",
   },
-};
+}
 
 export function getButtonClassNames({
   variant = "filled",
@@ -30,5 +30,5 @@ export function getButtonClassNames({
       ButtonStyles.variants[variant][color],
       ButtonStyles.sizes[size],
     ],
-  ];
+  ]
 }

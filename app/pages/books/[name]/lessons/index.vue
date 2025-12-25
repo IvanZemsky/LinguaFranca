@@ -1,9 +1,5 @@
 <template>
-    <div>
-        lessons
-    </div>
+  <div>lessons</div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>

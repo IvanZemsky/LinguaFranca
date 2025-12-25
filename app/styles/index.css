@@ -1,7 +1,8 @@
-html, body {
+html,
+body {
   scrollbar-gutter: stable;
 }
 
-body{
+body {
   font-size: 18px;
 }
