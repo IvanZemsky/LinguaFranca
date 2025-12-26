@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import LessonVocabulary from "./lesson-vocabulary.vue"
-import type { LessonLanguageText } from "@@/src/entities/lesson"
+import type { LessonLanguageText } from "~/src/entities/lesson"
 
 type Props = {
   data: LessonLanguageText

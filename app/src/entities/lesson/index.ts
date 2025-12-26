@@ -5,4 +5,6 @@ export type {
   LessonLanguageText,
   LessonParagraph,
   LessonNote,
+  LessonTable,
 } from "./model/types"
+

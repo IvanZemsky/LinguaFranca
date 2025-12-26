@@ -48,3 +48,11 @@ export type Word = {
    */
   translation: string
 }
+
+export type LessonTable = {
+  id: string
+  type: "vertical" | "horizontal" | "intersecting"
+  title: string
+  headers: string[]
+  rows: string[][]
+}

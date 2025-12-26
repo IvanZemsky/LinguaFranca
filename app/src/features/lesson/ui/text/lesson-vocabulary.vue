@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { UiButton } from "@@/src/shared/ui"
-import { ArrowBottomIcon } from "@@/src/shared/ui/icons"
-import { ref, type CSSProperties } from "vue"
+import { UiButton } from "~/src/shared/ui"
+import { ArrowBottomIcon } from "~/src/shared/ui/icons"
+import { computed, ref, useTemplateRef, watchEffect, type CSSProperties } from "vue"
 
 type Props = {
   data: {
