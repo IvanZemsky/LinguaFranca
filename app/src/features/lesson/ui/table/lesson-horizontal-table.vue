@@ -12,7 +12,7 @@ const { headers, rows, type } = data
 
 <template>
   <UiTable :variant="type">
-    <UiTableRow v-for="(row, i) in rows" :key="row">
+    <UiTableRow v-for="(row, i) in rows" :key="i">
       <UiTableCell scope="row">{{ headers[i] }}</UiTableCell>
       <UiTableCell v-for="cell in row" :key="cell">
         {{ cell }}

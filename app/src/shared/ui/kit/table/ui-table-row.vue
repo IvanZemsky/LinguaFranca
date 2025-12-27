@@ -3,15 +3,14 @@ import { useInject } from "../../../lib/vue"
 import type { UiTableProvide } from "./ui-table.vue"
 
 const { variant: tableVariant } = useInject<UiTableProvide>("ui-table")
-
 </script>
 
 <template>
   <tr
     :class="[
-      'flex shrink [&>td]:p-[12px] [&>td]:min-w-[76px]',
+      'ui-table-row',
       {
-        '[&:not(:last-child)]:border-b border-blue-100':
+        bordered:
           tableVariant === 'horizontal' || tableVariant === 'intersecting',
       },
     ]"

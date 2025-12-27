@@ -8,12 +8,11 @@ const { variant: tableVariant } = useInject<UiTableProvide>("ui-table")
 <template>
   <td
     :class="[
-      'flex items-center justify-center shrink bg-blue-50/40 border-blue-100 [&[scope=row]]:font-bold [&[scope=row]]:border-r',
-      {
-        '[&:not(:last-child)]:border-r': tableVariant === 'vertical',
-      },
+      'ui-table-cell',
+      { 'ui-table-cell-vertical': tableVariant === 'vertical' },
     ]"
   >
     <slot />
   </td>
 </template>
+

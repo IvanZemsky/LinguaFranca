@@ -1,0 +1,110 @@
+/* Base button class */
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  line-height: 1.5;
+}
+
+/* Variants */
+
+/* Filled variants */
+.ui-button.filled.primary {
+  color: var(--c-primary-contrast);
+  background-color: var(--c-primary);
+}
+
+.ui-button.filled.primary:hover {
+  background-color: var(--c-primary-dark);
+}
+
+.ui-button.filled.primary:active {
+  background-color: #7b4ad8; /* primary-dark value */
+}
+
+.ui-button.filled.secondary {
+  color: var(--c-secondary-contrast);
+  background-color: var(--c-secondary);
+}
+
+.ui-button.filled.secondary:hover {
+  background-color: var(--c-secondary-dark);
+}
+
+.ui-button.filled.secondary:active {
+  background-color: #7bb8ff; /* secondary-dark value */
+}
+
+/* Ghost variants */
+.ui-button.ghost.primary {
+  color: var(--c-main-text);
+  background-color: transparent;
+}
+
+.ui-button.ghost.primary:hover {
+  background-color: var(--c-primary-extra-light);
+}
+
+.ui-button.ghost.primary:active {
+  background-color: var(--c-primary-light);
+}
+
+.ui-button.ghost.secondary {
+  color: var(--c-main-text);
+  background-color: transparent;
+}
+
+.ui-button.ghost.secondary:hover {
+  background-color: var(--c-secondary-extra-light);
+}
+
+.ui-button.ghost.secondary:active {
+  background-color: var(--c-secondary-light);
+}
+
+/* Sizes */
+.ui-button.sm {
+  gap: 0.375rem; 
+  font-size: 0.875rem; 
+  padding: 0.25rem 0.5rem; 
+  border-radius: 0.5rem;
+}
+
+.ui-button.sm > svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.ui-button.md {
+  gap: 0.5rem; 
+  font-size: 1.125rem; 
+  padding: 0.5rem 1.25rem; 
+  border-radius: 0.75rem;
+}
+
+.ui-button.md > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.ui-button.lg {
+  gap: 0.625rem;
+  font-size: 1.125rem;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  min-width: 7.5rem;
+}
+
+.ui-button.lg > svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Ensure consistent SVG display */
+.ui-button > svg {
+  flex-shrink: 0;
+}

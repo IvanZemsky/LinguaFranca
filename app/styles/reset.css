@@ -1,0 +1,23 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  scrollbar-gutter: stable;
+}
+
+html{
+  font-size: 16px;
+}
+
+body {
+  font-family: Inter;
+  color: var(--c-main-text);
+}
+
+ul, ol, li{
+  list-style: none;
+}

@@ -17,7 +17,7 @@ const { headers, rows, type } = data
         {{ header }}
       </UiTableCell>
     </UiTableHead>
-    <UiTableRow v-for="row in rows" :key="row">
+    <UiTableRow v-for="(row, i) in rows" :key="i">
       <UiTableCell v-for="cell in row" :key="cell">{{ cell }}</UiTableCell>
     </UiTableRow>
   </UiTable>

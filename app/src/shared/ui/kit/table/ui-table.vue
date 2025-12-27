@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import "./table.css"
 export type UiTableProps = {
   variant?: "vertical" | "horizontal" | "intersecting"
 }
@@ -18,9 +19,9 @@ provide("ui-table", { variant })
 
 <template>
   <div
-    class="text-[14px] bg-blue-50/40 border border-blue-100 rounded-[12px] overflow-auto"
+    class="ui-table-container"
   >
-    <table class="shrink w-full">
+    <table class="ui-table">
       <slot />
     </table>
   </div>

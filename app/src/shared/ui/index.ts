@@ -1,5 +1,5 @@
-export { default as UiButton, type UiButtonProps } from "./kit/ui-button.vue"
-export { default as UiNuxtLink } from "./kit/ui-nuxt-link.vue"
+export { default as UiButton, type UiButtonProps } from "./kit/button/ui-button.vue"
+export { default as UiNuxtLink } from "./kit/button/ui-nuxt-btn-link.vue"
 
 export { default as UiTable, type UiTableProps } from "./kit/table/ui-table.vue"
 export { default as UiTableCell } from "./kit/table/ui-table-cell.vue"
