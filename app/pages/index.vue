@@ -1,7 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="text-3xl font-bold">Hello world</div>
+  <div class="page">
+    123
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  
+</style>
