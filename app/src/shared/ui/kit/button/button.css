@@ -5,7 +5,6 @@
   justify-content: center;
   border: none;
   cursor: pointer;
-  font-weight: 500;
   transition: background-color 0.2s ease, color 0.2s ease;
   line-height: 1.5;
 }
@@ -23,7 +22,7 @@
 }
 
 .ui-button.filled.primary:active {
-  background-color: #7b4ad8; /* primary-dark value */
+  background-color: var(--c-primary-darker);
 }
 
 .ui-button.filled.secondary {
@@ -36,7 +35,7 @@
 }
 
 .ui-button.filled.secondary:active {
-  background-color: #7bb8ff; /* secondary-dark value */
+  background-color: var(--c-secondary-darker);
 }
 
 /* Ghost variants */
