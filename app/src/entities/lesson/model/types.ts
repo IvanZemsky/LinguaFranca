@@ -1,6 +1,12 @@
-export type LessonNumber = string
+export type LessonNumber = number
+
+export type Section = {
+  number: number
+  title: string
+}
 
 export type Lesson = {
+  sectionNumber: number
   number: LessonNumber
   title: string
   content: LessonContent[]

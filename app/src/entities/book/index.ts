@@ -1,1 +1,1 @@
-export type { Book, BookId } from "./model/types"
+export type { Book, BookId } from "./model"

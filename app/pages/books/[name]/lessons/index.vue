@@ -13,6 +13,22 @@
           </li>
         </ul>
       </div>
+      <div class="lesson-section">
+        <h2 class="section-title">Раздел 1. Первый раздел</h2>
+        <ul class="lessons-list">
+          <li v-for="i in 8" :key="i" class="lesson-item">
+            <NuxtLink :to="`/books/english/lessons/${i}`">1.{{ i }} Lorem ipsum dolor sit amet</NuxtLink>
+          </li>
+        </ul>
+      </div>
+      <div class="lesson-section">
+        <h2 class="section-title">Раздел 1. Первый раздел</h2>
+        <ul class="lessons-list">
+          <li v-for="i in 8" :key="i" class="lesson-item">
+            <NuxtLink :to="`/books/english/lessons/${i}`">1.{{ i }} Lorem ipsum dolor sit amet</NuxtLink>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
