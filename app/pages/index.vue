@@ -58,7 +58,7 @@ import { UiNuxtLink } from "~/src/shared/ui"
   font-family: Lora;
   font-size: 1.5rem;
 }
-.intro-start-link {
+:deep(.ui-button.md.intro-start-link) {
   padding: 1.25rem 2rem;
   min-width: 184px;
 }
