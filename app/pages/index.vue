@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { UiNuxtLink } from "~/src/shared/ui"
+import { UiNuxtBtnLink } from "~/src/shared/ui"
 </script>
 
 <template>
@@ -12,9 +12,9 @@ import { UiNuxtLink } from "~/src/shared/ui"
           <br />
           Полезные материалы, тексты, шпаргалки, ссылки
         </div>
-        <UiNuxtLink class="intro-start-link appearing-3" to="/books">
+        <UiNuxtBtnLink class="intro-start-link appearing-3" to="/books">
           Начать
-        </UiNuxtLink>
+        </UiNuxtBtnLink>
       </div>
     </section>
   </div>

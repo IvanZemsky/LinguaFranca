@@ -16,14 +16,14 @@ defineProps<Props>()
     <h2 class="card-title">
       {{ data.name }}
     </h2>
-    <div class="card-desc">
+    <!-- <div class="card-desc">
       <div class="card-desc-item">{{ data.details.lessons }} уроков</div>
       <div class="card-desc-item">{{ data.details.words }} слов</div>
       <div class="card-desc-item">{{ data.details.texts }} текстов</div>
       <div class="card-desc-item">
         {{ data.details.levels.join(" — ") }} уровни
       </div>
-    </div>
+    </div> -->
   </NuxtLink>
 </template>
 
@@ -32,7 +32,7 @@ defineProps<Props>()
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 1rem;
   color: #fff;
   transition: box-shadow 0.15s ease-in-out;
 
@@ -62,9 +62,9 @@ defineProps<Props>()
     .card-title {
       text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
     }
-    .card-desc {
+    /* .card-desc {
       opacity: 1;
-    }
+    } */
   }
 }
 
@@ -79,7 +79,7 @@ defineProps<Props>()
   transition: text-shadow 0.3s ease-in-out;
 }
 
-.card-desc {
+/* .card-desc {
   position: absolute;
   bottom: 1.5rem;
   left: 50%;
@@ -99,5 +99,5 @@ defineProps<Props>()
   &:nth-child(3) {
     text-align: right;
   }
-}
+} */
 </style>
