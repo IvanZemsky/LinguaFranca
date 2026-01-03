@@ -1,4 +1,4 @@
-export { default as LessonNote } from "./ui/lesson-note.vue"
+export { default as LessonNote } from "./ui/content/lesson-note.vue"
 export { default as LessonText } from "./ui/text/lesson-text.vue"
 export { default as LessonTable } from "./ui/table/lesson-table.vue"
 export { default as LessonHorizontalTable } from "./ui/table/lesson-horizontal-table.vue"

@@ -5,6 +5,7 @@ export type {
   LessonContent,
   LessonLanguageText,
   LessonParagraph,
+  LessonSubheading,
   LessonNote,
   LessonTable,
   Section,

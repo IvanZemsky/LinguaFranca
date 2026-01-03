@@ -7,11 +7,11 @@ type Props = {
 }
 
 const { data } = defineProps<Props>()
-const { headers, rows, type } = data
+const { headers, rows, variant } = data
 </script>
 
 <template>
-  <UiTable :variant="type">
+  <UiTable :variant="variant">
     <UiTableRow v-for="(row, i) in rows" :key="i">
       <UiTableCell scope="row">{{ headers[i] }}</UiTableCell>
       <UiTableCell v-for="cell in row" :key="cell">

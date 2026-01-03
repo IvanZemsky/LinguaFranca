@@ -23,6 +23,7 @@ export type LessonContent =
   | LessonParagraph
   | LessonNote
   | LessonLanguageText
+  | LessonTable
 
 export type LessonParagraph = {
   id: string
@@ -73,7 +74,8 @@ export type LessonTable = {
   id: string
   lessonId: string
   numberInLesson: string
-  type: "vertical" | "horizontal" | "intersecting"
+  type: "table"
+  variant: "vertical" | "horizontal" | "intersecting"
   title: string
   headers: string[]
   rows: string[][]

@@ -7,18 +7,26 @@ type Props = {
 }
 
 const { data } = defineProps<Props>()
-const { headers, rows, type } = data
+const { headers, rows, variant } = data
 </script>
 
 <template>
-  <UiTable :variant="type">
+  <UiTable :variant="variant">
     <UiTableHead v-if="headers.length">
+      <UiTableCell />
       <UiTableCell v-for="header in headers" :key="header">
         {{ header }}
       </UiTableCell>
     </UiTableHead>
-    <UiTableRow v-for="(row, i) in rows" :key="i">
-      <UiTableCell v-for="cell in row" :key="cell">{{ cell }}</UiTableCell>
+    <UiTableRow v-for="(row, rowIndex) in rows" :key="rowIndex">
+      <template v-for="(cell, cellIndex) in row" :key="cellIndex">
+        <UiTableCell v-if="cellIndex === 0" scope="row">
+          {{ cell }}
+        </UiTableCell>
+        <UiTableCell v-else-if="cellIndex !== 0">
+          {{ cell }}
+        </UiTableCell>
+      </template>
     </UiTableRow>
   </UiTable>
 </template>
