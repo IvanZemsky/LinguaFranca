@@ -7,7 +7,7 @@ export const bookService = {
     return await $fetch<Book[]>(baseUrl)
   },
 
-  async fetchBookByName(name: string) {
-    return await $fetch<Book | undefined>(`${baseUrl}/${name}`)
+  async fetchBookById(id: string) {
+    return await $fetch<Book | undefined>(`${baseUrl}/${id}`)
   },
 }

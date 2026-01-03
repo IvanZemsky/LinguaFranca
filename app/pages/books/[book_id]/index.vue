@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useFetchBookByName } from "~/src/entities/book"
+import { useFetchBookById } from "~/src/entities/book"
 import { UiNuxtBtnLink } from "~/src/shared/ui"
 
-const bookName = useRoute().params.book_name
-const { data: book, error, pending } = useFetchBookByName(bookName as string)
+const bookId = useRoute().params.book_id
+const { data: book, error, pending } = useFetchBookById(bookId as string)
 </script>
 
 <template>
@@ -15,7 +15,7 @@ const { data: book, error, pending } = useFetchBookByName(bookName as string)
       <p v-else>Ошибка</p>
     </template>
 
-    <UiNuxtBtnLink v-if="!pending && book" :to="`/books/${book.code}/lessons`">
+    <UiNuxtBtnLink v-if="!pending && book" :to="`/books/${book.id}/lessons`">
       Список уроков
     </UiNuxtBtnLink>
   </div>

@@ -3,12 +3,18 @@ export type LessonNumber = number
 export type Section = {
   number: number
   title: string
+  lessons: LessonInfo[]
+  bookId: string
 }
 
-export type Lesson = {
-  sectionNumber: number
+export type LessonInfo = {
+  id: string
   number: LessonNumber
   title: string
+  readableId: string
+}
+
+export type Lesson = LessonInfo & {
   content: LessonContent[]
 }
 
@@ -20,12 +26,16 @@ export type LessonContent =
 
 export type LessonParagraph = {
   id: string
+  lessonId: string
+  numberInLesson: string
   type: "paragraph"
   text: string
 }
 
 export type LessonSubheading = {
   id: string
+  lessonId: string
+  numberInLesson: string
   type: "subheading"
   text: string
   level: 1 | 2 | 3
@@ -33,6 +43,8 @@ export type LessonSubheading = {
 
 export type LessonNote = {
   id: string
+  lessonId: string
+  numberInLesson: string
   type: "note"
   title: string
   text: string
@@ -40,6 +52,8 @@ export type LessonNote = {
 
 export type LessonLanguageText = {
   id: string
+  lessonId: string
+  numberInLesson: string
   type: "language-text"
   title: string
   translation: string
@@ -57,6 +71,8 @@ export type Word = {
 
 export type LessonTable = {
   id: string
+  lessonId: string
+  numberInLesson: string
   type: "vertical" | "horizontal" | "intersecting"
   title: string
   headers: string[]

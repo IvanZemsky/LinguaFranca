@@ -14,7 +14,7 @@ const { data: books } = useFetchBooks()
           v-for="book in books"
           :key="book.id"
           :data="book"
-          :link="`/books/${book.code}`"
+          :link="`/books/${book.id}`"
         />
       </div>
     </div>

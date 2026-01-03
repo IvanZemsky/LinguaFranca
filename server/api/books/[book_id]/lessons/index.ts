@@ -1,10 +1,11 @@
-import { type Book } from "~/src/entities/book"
 import { getDataFileName } from "~~/server/config"
+import { readJsonFile } from "~~/server/utils/json"
+import type { Section } from "~~/app/src/entities/lesson"
 
 export default defineEventHandler(async (event) => {
-  const bookName = getRouterParam(event, "book_name")
+  const bookId = getRouterParam(event, "book_id")
 
-  if (!bookName) {
+  if (!bookId) {
     throw createError({
       statusCode: 400,
       statusMessage: "Book name is required",
@@ -12,17 +13,10 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const books = await readJsonFile<Book[]>(getDataFileName("books"))
-    const book = books.find((book) => book.code === bookName)
-
-    if (!book) {
-      throw createError({
-        statusCode: 404,
-        statusMessage: "Book not found",
-      })
-    }
-
-    return book
+    const lessons = await readJsonFile<Section[]>(
+      getDataFileName("lessons", bookId, "list")
+    )
+    return lessons
   } catch (error: any) {
     if (error?.statusCode) {
       throw error

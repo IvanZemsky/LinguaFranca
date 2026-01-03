@@ -1,0 +1,21 @@
+{
+  "number": 1,
+  "title": "First test lesson",
+  "readableId": "first-test-lesson",
+  "content": [
+    {
+      "id": "1",
+      "numberInLesson": "1",
+      "type": "subheading",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+      "level": 1
+    },
+    {
+      "id": "2",
+      "numberInLesson": "2",
+      "type": "text",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
+      "level": 1
+    }
+  ]
+}

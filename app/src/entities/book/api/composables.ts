@@ -4,6 +4,6 @@ export function useFetchBooks() {
     return useAsyncData("books", () => bookService.fetchBooks())
 }
 
-export function useFetchBookByName(name: string) {
-    return useAsyncData(`book-${name}`, () => bookService.fetchBookByName(name))
+export function useFetchBookById(id: string) {
+    return useAsyncData(`book-${id}`, () => bookService.fetchBookById(id))
 }

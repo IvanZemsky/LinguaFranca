@@ -2,7 +2,6 @@ export type BookId = string
 
 export type Book = {
   id: BookId
-  code: string
   name: string
   /**
    * Illustration

@@ -1,0 +1,45 @@
+[
+  {
+    "number": 1,
+    "title": "Основы",
+    "bookName": "latin",
+    "lessons": [
+      {
+        "number": 1,
+        "title": "First test lesson",
+        "readableId": "first-test-lesson"
+      },
+      {
+        "number": 2,
+        "title": "Second test lesson",
+        "readableId": "second-test-lesson"
+      },
+      {
+        "number": 3,
+        "title": "Third test lesson",
+        "readableId": "third-test-lesson"
+      }
+    ]
+  },
+  {
+    "number": 2,
+    "title": "Advanced",
+    "lessons": [
+      {
+        "number": 4,
+        "title": "First test lesson",
+        "readableId": "first-test-lesson"
+      },
+      {
+        "number": 5,
+        "title": "Second test lesson",
+        "readableId": "second-test-lesson"
+      },
+      {
+        "number": 6,
+        "title": "Third test lesson",
+        "readableId": "third-test-lesson"
+      }
+    ]
+  }
+]
