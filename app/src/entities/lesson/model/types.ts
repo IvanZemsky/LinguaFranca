@@ -57,7 +57,8 @@ export type LessonLanguageText = {
   numberInLesson: string
   type: "language-text"
   title: string
-  translation: string
+  titleTranslation: string
+  textTranslation: string
   text: string
   vocabulary: Word[]
 }

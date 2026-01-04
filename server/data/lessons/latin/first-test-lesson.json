@@ -5,6 +5,7 @@
   "content": [
     {
       "id": "1",
+      "lessonId": "first-test-lesson",
       "numberInLesson": "1",
       "type": "subheading",
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
@@ -12,10 +13,23 @@
     },
     {
       "id": "2",
+      "lessonId": "first-test-lesson",
       "numberInLesson": "2",
-      "type": "text",
+      "type": "language-text",
+      "title": "Test text",
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
-      "level": 1
+      "textTranslation": "Тестовый перевод Тестовый перевод Тестовый перевод Тестовый перевод",
+      "titleTranslation": "Тестовый перевод заголовка",
+      "vocabulary": [
+        {
+          "word": "Lorem ae, m",
+          "translation": "слово 1"
+        },
+        {
+          "word": "ipsum",
+          "translation": "слово 2"
+        }
+      ]
     }
   ]
 }
