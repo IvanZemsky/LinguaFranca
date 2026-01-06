@@ -32,6 +32,66 @@
           "translation": "слово 2"
         }
       ]
+    },
+    {
+      "id": "3",
+      "type": "table",
+      "lessonId": "first-test-lesson",
+      "numberInLesson": "3",
+      "variant": "intersecting",
+      "title": "Table",
+      "headers": ["Header 2", "Header 3"],
+      "rows": [
+        ["Row 1 cell 1", "Row 1 cell 2", "Row 1 cell 3"],
+        ["Row 2 cell 1", "Row 2 cell 2", "Row 2 cell 3"],
+        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"],
+        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"]
+      ]
+    },
+    {
+      "id": "4",
+      "type": "table",
+      "lessonId": "first-test-lesson",
+      "numberInLesson": "3",
+      "variant": "headerless",
+      "title": "Table",
+      "headers": ["Header 1","Header 2", "Header 3"],
+      "rows": [
+        ["Row 1 cell 1", "Row 1 cell 2", "Row 1 cell 3"],
+        ["Row 2 cell 1", "Row 2 cell 2", "Row 2 cell 3"],
+        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"],
+        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"]
+      ]
+    },
+    {
+      "id": "5",
+      "type": "table",
+      "lessonId": "first-test-lesson",
+      "numberInLesson": "3",
+      "variant": "horizontal",
+      "title": "Table",
+      "headers": ["Header 1","Header 2", "Header 3", "Header 4"],
+      "rows": [
+        ["Row 1 cell 1", "Row 1 cell 2", "Row 1 cell 3"],
+        ["Row 2 cell 1", "Row 2 cell 2", "Row 2 cell 3"],
+        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"],
+        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"]
+      ]
+    },
+    {
+      "id": "6",
+      "type": "table",
+      "lessonId": "first-test-lesson",
+      "numberInLesson": "3",
+      "variant": "vertical",
+      "title": "Table",
+      "headers": ["Header 1","Header 2", "Header 3"],
+      "rows": [
+        ["Row 1 cell 1", "Row 1 cell 2", "Row 1 cell 3"],
+        ["Row 2 cell 1", "Row 2 cell 2", "Row 2 cell 3"],
+        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"],
+        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"]
+      ]
     }
   ]
 }

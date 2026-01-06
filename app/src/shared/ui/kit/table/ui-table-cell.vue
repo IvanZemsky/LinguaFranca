@@ -9,10 +9,12 @@ const { variant: tableVariant } = useInject<UiTableProvide>("ui-table")
   <td
     :class="[
       'ui-table-cell',
-      { 'ui-table-cell-vertical': tableVariant === 'vertical' },
+      {
+        'ui-table-cell-vertical':
+          tableVariant === 'vertical' || tableVariant === 'headerless',
+      },
     ]"
   >
     <slot />
   </td>
 </template>
-

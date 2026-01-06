@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import "./table.css"
 export type UiTableProps = {
-  variant?: "vertical" | "horizontal" | "intersecting"
+  variant?: "vertical" | "horizontal" | "intersecting" | "headerless"
 }
 
 export type UiTableProvide = {
@@ -18,11 +18,12 @@ provide("ui-table", { variant })
 </script>
 
 <template>
-  <div
-    class="ui-table-container"
-  >
+  <div class="ui-table-container">
     <table class="ui-table">
-      <slot />
+      <slot name="head" />
+      <tbody>
+        <slot />
+      </tbody>
     </table>
   </div>
 </template>

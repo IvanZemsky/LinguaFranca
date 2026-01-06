@@ -78,7 +78,7 @@ export type LessonTable = {
   lessonId: string
   numberInLesson: string
   type: "table"
-  variant: "vertical" | "horizontal" | "intersecting"
+  variant: "vertical" | "horizontal" | "intersecting" | "headerless"
   title: string
   headers: string[]
   rows: string[][]

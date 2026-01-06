@@ -1,5 +1,5 @@
 <template>
-  <thead class="ui-table-header">
-    <slot />
+  <thead>
+    <tr class="ui-table-header"><slot /></tr>
   </thead>
 </template>

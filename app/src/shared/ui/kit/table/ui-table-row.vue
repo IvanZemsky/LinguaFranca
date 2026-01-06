@@ -11,7 +11,9 @@ const { variant: tableVariant } = useInject<UiTableProvide>("ui-table")
       'ui-table-row',
       {
         bordered:
-          tableVariant === 'horizontal' || tableVariant === 'intersecting',
+          tableVariant === 'horizontal' ||
+          tableVariant === 'intersecting' ||
+          tableVariant === 'headerless',
       },
     ]"
   >

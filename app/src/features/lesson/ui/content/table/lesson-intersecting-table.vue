@@ -12,12 +12,14 @@ const { headers, rows, variant } = data
 
 <template>
   <UiTable :variant="variant">
-    <UiTableHead v-if="headers.length">
-      <UiTableCell />
-      <UiTableCell v-for="header in headers" :key="header">
-        {{ header }}
-      </UiTableCell>
-    </UiTableHead>
+    <template #head>
+      <UiTableHead v-if="headers.length">
+        <UiTableCell />
+        <UiTableCell v-for="header in headers" :key="header">
+          {{ header }}
+        </UiTableCell>
+      </UiTableHead>
+    </template>
     <UiTableRow v-for="(row, rowIndex) in rows" :key="rowIndex">
       <template v-for="(cell, cellIndex) in row" :key="cellIndex">
         <UiTableCell v-if="cellIndex === 0" scope="row">

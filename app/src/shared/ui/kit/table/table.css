@@ -7,19 +7,20 @@
   border: 1px solid var(--c-secondary-light);
   border-radius: 0.75rem;
   overflow: auto;
+  margin: 0 auto;
 }
 
 .ui-table {
+  display: table;
   flex-shrink: 0;
   width: 100%;
-  border-collapse: separate;
+  border-collapse: collapse;
   border-spacing: 0;
 }
 
 /* Table Row */
 
 .ui-table-row {
-  display: flex;
   flex-shrink: 0;
 }
 
@@ -35,10 +36,10 @@
 /* Table Cell */
 
 .ui-table-cell {
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  flex-grow: 1;
   background-color: var(--c-secondary-extra-light);
   padding: 0.75rem;
 }
@@ -55,7 +56,6 @@
 /* Table Head */
 
 .ui-table-header {
-  display: flex;
   flex-shrink: 0;
   font-weight: 700;
   border-bottom: 1px solid var(--c-secondary-light);
