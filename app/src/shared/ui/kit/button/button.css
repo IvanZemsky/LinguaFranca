@@ -78,6 +78,10 @@
   height: 0.75rem;
 }
 
+.ui-button.sm.only-icon {
+  padding: 0.5rem;
+}
+
 .ui-button.md {
   gap: 0.5rem; 
   font-size: 1.125rem; 
@@ -90,6 +94,10 @@
   height: 1.25rem;
 }
 
+.ui-button.md.only-icon {
+  padding: 0.5rem;
+}
+
 .ui-button.lg {
   gap: 0.625rem;
   font-size: 1.125rem;
@@ -98,12 +106,23 @@
   min-width: 7.5rem;
 }
 
+.ui-button.lg.only-icon {
+  min-width: 0;
+}
+
 .ui-button.lg > svg {
   width: 1.25rem;
   height: 1.25rem;
 }
 
-/* Ensure consistent SVG display */
+.ui-button.lg.only-icon {
+  padding: 1rem;
+}
+
+/* SVG */
+
 .ui-button > svg {
   flex-shrink: 0;
 }
+
+

@@ -16,6 +16,6 @@ const attrs = useAttrs()
 <template>
   <NuxtLink :class="`ui-button ${size} ${variant} ${color}`" v-bind="attrs">
     <slot />
-    <slot name="end-icon" />
+    <slot name="icon" />
   </NuxtLink>
 </template>
