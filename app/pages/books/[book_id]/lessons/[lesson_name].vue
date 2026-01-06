@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useFetchLessonByBookIdAndReadableId } from "~/src/entities/lesson"
-import { LessonContentPart } from "~/src/features/lesson"
+import { createAnchorId, LessonContentPart } from "~/src/features/lesson"
 import { UiButton } from "~/src/shared/ui"
 import { ArrowLeftIcon, ArrowRightIcon } from "~/src/shared/ui/icons"
 
@@ -13,6 +13,10 @@ const {
   pending,
   error,
 } = useFetchLessonByBookIdAndReadableId(bookId, lessonName)
+
+const subheadings = computed(() =>
+  lesson.value?.content.filter((item) => item.type === "subheading")
+)
 </script>
 
 <template>
@@ -27,16 +31,19 @@ const {
     <div class="content" v-if="!pending && lesson">
       <div class="menu">
         <div class="menu-blocks">
-          <div class="menu-block">
+          <div v-if="subheadings?.length" class="menu-block">
             <p class="menu-title">Навигация по уроку</p>
-            <p class="manu-link menu-link--active">Введение</p>
-            <p class="manu-link">Пункт 2</p>
-          </div>
-
-          <div class="menu-block">
-            <p class="menu-title">Пункт 2</p>
-            <p class="manu-link menu-link--active">Введение</p>
-            <p class="manu-link">Пункт 2</p>
+            <a
+              v-for="subheading in subheadings"
+              :href="`#${createAnchorId(
+                subheading.text,
+                subheading.numberInLesson
+              )}`"
+              :key="subheading.numberInLesson"
+              class="manu-link"
+            >
+              {{ subheading.text }}
+            </a>
           </div>
         </div>
       </div>
@@ -96,6 +103,15 @@ const {
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
+  font-size: 0.875rem;
+}
+
+.menu-title {
+  color: var(--c-neutral);
+}
+
+.menu-link--active {
+  color: var(--c-primary-dark);
 }
 
 .lesson-wrap {

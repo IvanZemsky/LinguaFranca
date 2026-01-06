@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import type { LessonSubheading } from "~/src/entities/lesson"
+import { createAnchorId } from "../../model/anchors";
 
 type Props = {
   data: LessonSubheading
 }
 
 const { data } = defineProps<Props>()
-const { level, text } = data
+const { level, text, numberInLesson } = data
 </script>
 
 <template>
-  <h2 :class="['subheading', `level-${level}`]">{{ text }}</h2>
+  <h2
+    :class="['subheading', `level-${level}`]"
+    :id="createAnchorId(text, numberInLesson)"
+  >
+    {{ text }}
+  </h2>
 </template>
 
 <style scoped>

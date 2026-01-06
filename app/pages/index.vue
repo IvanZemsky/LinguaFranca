@@ -1,11 +1,20 @@
 <script setup lang="ts">
 import { UiNuxtBtnLink } from "~/src/shared/ui"
+
+const showContent = ref(false)
+
+onMounted(() => {
+  // approximate delay for waiting for fonts
+  setTimeout(() => {
+    showContent.value = true
+  }, 300)
+})
 </script>
 
 <template>
   <div class="page">
     <section class="intro">
-      <div class="intro-content">
+      <div v-show="showContent" class="intro-content">
         <h1 class="intro-title appearing-1">LinguaFranca</h1>
         <div class="intro-desc appearing-2">
           Сборник бесплатных самоучителей
