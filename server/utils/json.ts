@@ -1,29 +1,9 @@
-// utils/fs-utils.ts
-import { readFile } from "fs/promises"
-import { resolve } from "path"
+const DATA_PATH = "assets:server"
 
-export async function readJsonFile<T>(relativePath: string): Promise<T> {
-  try {
-    if (process.env.NODE_ENV !== "production") {
-      const rootDir = process.cwd()
-      const fullPath = resolve(rootDir, relativePath)
-      return JSON.parse(await readFile(fullPath, "utf-8"))
-    }
+export async function retrieveDataFromStorage<T>(path: string) {
+  return await useStorage(DATA_PATH).getItem<T>(path)
+}
 
-    const fullPath = resolve(
-      process.cwd(),
-      ".vercel/output/functions",
-      relativePath
-    )
-
-    try {
-      return JSON.parse(await readFile(fullPath, "utf-8"))
-    } catch {
-      const module = await import(relativePath)
-      return module.default || module
-    }
-  } catch (error) {
-    console.error("Error reading JSON file:", error)
-    throw error
-  }
+export function getDataFileName(...strings: string[]) {
+  return [...strings].join("/") + ".json"
 }

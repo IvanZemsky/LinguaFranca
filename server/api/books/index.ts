@@ -1,9 +1,12 @@
-import { getDataFileName } from "~~/server/config"
-import { readJsonFile } from "~~/server/utils/json"
+import { Book } from "~/src/entities/book"
+import { retrieveDataFromStorage, getDataFileName } from "~~/server/utils/json"
 
 export default defineEventHandler(async () => {
   try {
-    return await readJsonFile(getDataFileName("books"))
+    const books = await retrieveDataFromStorage<Book[]>(
+      getDataFileName("books")
+    )
+    return books
   } catch (error: any) {
     if (error?.statusCode) {
       throw error

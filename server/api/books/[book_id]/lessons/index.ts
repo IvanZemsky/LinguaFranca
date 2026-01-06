@@ -1,6 +1,5 @@
-import { getDataFileName } from "~~/server/config"
-import { readJsonFile } from "~~/server/utils/json"
 import type { Section } from "~~/app/src/entities/lesson"
+import { getDataFileName, retrieveDataFromStorage } from "~~/server/utils/json"
 
 export default defineEventHandler(async (event) => {
   const bookId = getRouterParam(event, "book_id")
@@ -13,7 +12,7 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const lessons = await readJsonFile<Section[]>(
+    const lessons = await retrieveDataFromStorage<Section[]>(
       getDataFileName("lessons", bookId, "list")
     )
     return lessons
