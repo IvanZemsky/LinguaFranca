@@ -2,6 +2,8 @@
   "number": 1,
   "title": "First test lesson",
   "readableId": "first-test-lesson",
+  "prevLessonReadableId": null,
+  "nextLessonReadableId": "second-test-lesson",
   "content": [
     {
       "id": "1",

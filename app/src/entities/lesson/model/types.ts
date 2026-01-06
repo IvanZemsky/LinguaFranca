@@ -12,6 +12,8 @@ export type LessonInfo = {
   number: LessonNumber
   title: string
   readableId: string
+  prevLessonReadableId: string | null
+  nextLessonReadableId: string | null
 }
 
 export type Lesson = LessonInfo & {

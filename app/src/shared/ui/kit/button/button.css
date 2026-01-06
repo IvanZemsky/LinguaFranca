@@ -106,8 +106,9 @@
   min-width: 7.5rem;
 }
 
-.ui-button.lg.only-icon {
+.ui-button.only-icon {
   min-width: 0;
+  aspect-ratio: 1 / 1;
 }
 
 .ui-button.lg > svg {

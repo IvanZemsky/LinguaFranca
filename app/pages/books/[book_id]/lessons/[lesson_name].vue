@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useFetchLessonByBookIdAndReadableId } from "~/src/entities/lesson"
 import { createAnchorId, LessonContentPart } from "~/src/features/lesson"
-import { UiButton } from "~/src/shared/ui"
+import { UiNuxtBtnLink } from "~/src/shared/ui"
 import { ArrowLeftIcon, ArrowRightIcon } from "~/src/shared/ui/icons"
 
 const route = useRoute()
@@ -40,7 +40,7 @@ const subheadings = computed(() =>
                 subheading.numberInLesson
               )}`"
               :key="subheading.numberInLesson"
-              class="manu-link"
+              class="menu-link"
             >
               {{ subheading.text }}
             </a>
@@ -50,11 +50,17 @@ const subheadings = computed(() =>
 
       <div class="lesson-wrap">
         <div class="change-btn-wrap">
-          <UiButton class="change-lesson-btn" size="lg" variant="ghost">
+          <UiNuxtBtnLink
+            v-show="lesson.prevLessonReadableId"
+            class="change-lesson-btn"
+            size="lg"
+            variant="ghost"
+            :to="`/books/${bookId}/lessons/${lesson.prevLessonReadableId}`"
+          >
             <template #icon>
               <ArrowLeftIcon />
             </template>
-          </UiButton>
+          </UiNuxtBtnLink>
         </div>
 
         <section class="lesson-content">
@@ -66,11 +72,17 @@ const subheadings = computed(() =>
         </section>
 
         <div class="change-btn-wrap">
-          <UiButton class="change-lesson-btn" size="lg" variant="ghost">
+          <UiNuxtBtnLink
+            v-show="lesson.nextLessonReadableId"
+            class="change-lesson-btn"
+            size="lg"
+            variant="ghost"
+            :to="`/books/${bookId}/lessons/${lesson.nextLessonReadableId}`"
+          >
             <template #icon>
               <ArrowRightIcon />
             </template>
-          </UiButton>
+          </UiNuxtBtnLink>
         </div>
       </div>
     </div>
@@ -110,6 +122,13 @@ const subheadings = computed(() =>
   color: var(--c-neutral);
 }
 
+.menu-link {
+  transition: 0.15s all linear;
+}
+.menu-link:hover {
+  color: var(--c-primary-dark);
+}
+
 .menu-link--active {
   color: var(--c-primary-dark);
 }
@@ -119,6 +138,7 @@ const subheadings = computed(() =>
   justify-content: space-between;
   flex-grow: 1;
   padding: 1.25rem;
+  gap: 1.25rem;
 }
 
 .lesson-content {
@@ -135,6 +155,7 @@ const subheadings = computed(() =>
   display: flex;
   align-items: center;
   max-height: calc(100vh - 70px);
+  min-width: 52px;
   position: sticky;
   top: 0;
 }
