@@ -7,14 +7,14 @@ type Props = {
 }
 
 const props = defineProps<Props>()
-const { title, translation, text, vocabulary } = props.data
+const { title, titleTranslation, textTranslation, text, vocabulary } = props.data
 </script>
 
 <template>
   <div class="container">
     <header class="header">
       <h3>{{ title }}</h3>
-      <p class="translation">({{ translation }})</p>
+      <p class="translation">({{ titleTranslation }})</p>
     </header>
 
     <p class="text">

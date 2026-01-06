@@ -35,7 +35,7 @@ const {
             :key="lesson.id"
             class="lesson-item"
           >
-            <NuxtLink :to="`/books/${bookId}/lessons/${lesson.id}`">
+            <NuxtLink :to="`/books/${bookId}/lessons/${lesson.readableId}`">
               {{ lesson.number }}. {{ lesson.title }}
             </NuxtLink>
           </li>

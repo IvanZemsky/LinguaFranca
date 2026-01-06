@@ -2,17 +2,21 @@
 import type { LessonSubheading } from "~/src/entities/lesson"
 
 type Props = {
-  level: LessonSubheading["level"]
+  data: LessonSubheading
 }
 
-defineProps<Props>()
+const { data } = defineProps<Props>()
+const { level, text } = data
 </script>
 
 <template>
-  <h2 :class="['subheading', `level-${level}`]">Heading</h2>
+  <h2 :class="['subheading', `level-${level}`]">{{ text }}</h2>
 </template>
 
 <style scoped>
+.subheading {
+  font-weight: 700;
+}
 .subheading.level-1 {
   font-size: 1.75rem;
 }

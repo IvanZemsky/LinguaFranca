@@ -13,5 +13,5 @@ export type {
 
 export {
   useFetchSectionsByBookId,
-  useLessonByBookIdAndReadableId,
+  useFetchLessonByBookIdAndReadableId,
 } from "./api/composables"

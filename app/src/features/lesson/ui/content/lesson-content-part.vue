@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import type { LessonContent } from "~/src/entities/lesson";
-import { LESSON_CONTENT_TYPES } from "../../model"
+import { LESSON_CONTENT_TYPES } from "./model"
 
 type Props = {
   data: LessonContent

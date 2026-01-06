@@ -7,7 +7,7 @@ export function useFetchSectionsByBookId(bookId: BookId) {
   )
 }
 
-export function useLessonByBookIdAndReadableId(
+export function useFetchLessonByBookIdAndReadableId(
   bookId: BookId,
   readableId: string
 ) {
