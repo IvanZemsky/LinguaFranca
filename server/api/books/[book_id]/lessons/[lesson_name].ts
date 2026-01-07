@@ -1,6 +1,6 @@
 import type { Lesson } from "~~/app/src/entities/lesson"
 import { BASE_API_URL } from "~~/server/config"
-import { getDataFileName, retrieveDataFromStorage } from "~~/server/utils/json"
+import { getDataFileName } from "~~/server/utils/json"
 
 export default defineEventHandler(async (event) => {
   const bookId = getRouterParam(event, "book_id")
@@ -21,6 +21,7 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
+    console.log(getDataFileName(BASE_API_URL, "lessons", bookId, lessonName))
     const response = await fetch(
       getDataFileName(BASE_API_URL, "lessons", bookId, lessonName)
     )
@@ -31,7 +32,7 @@ export default defineEventHandler(async (event) => {
       })
     }
 
-    const lesson = await response.json()
+    const lesson: Lesson = await response.json()
     return lesson
   } catch (error: any) {
     if (error?.statusCode) {
