@@ -64,6 +64,7 @@ const subheadings = computed(() =>
         </div>
 
         <section class="lesson-content">
+          <h1 class="lesson-title">{{ lesson.title }}</h1>
           <LessonContentPart
             v-for="part in lesson.content"
             :key="part.numberInLesson"
@@ -94,6 +95,11 @@ const subheadings = computed(() =>
   display: flex;
   gap: 1.25rem;
   height: 100%;
+}
+
+.lesson-title{
+  font-size: 1.65rem;
+  font-weight: 700;
 }
 
 .menu {
@@ -145,7 +151,7 @@ const subheadings = computed(() =>
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  gap: 1.5rem;
+  gap: 1.75rem;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;

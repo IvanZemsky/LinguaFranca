@@ -1,17 +1,21 @@
 <script setup lang="ts">
+import type { LessonParagraph } from "~/src/entities/lesson"
+
 type Props = {
-    text: string
+  data: LessonParagraph
 }
 
-const {text} = defineProps<Props>()
+const { data } = defineProps<Props>()
+const { text } = data
 </script>
 
 <template>
-    <p class="paragraph">{{ text }}</p>
+  <p class="paragraph">{{ text }}</p>
 </template>
 
 <style scoped>
-.paragraph{
-    font-size: 4rem;
+.paragraph {
+  white-space: pre-line;
+  font-size: 1rem;
 }
 </style>

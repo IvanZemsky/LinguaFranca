@@ -24,7 +24,7 @@ const { level, text, numberInLesson } = data
   font-weight: 700;
 }
 .subheading.level-1 {
-  font-size: 1.75rem;
+  font-size: 1.65rem;
 }
 .subheading.level-2 {
   font-size: 1.5rem;

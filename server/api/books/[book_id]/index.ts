@@ -1,4 +1,5 @@
 import { type Book } from "~/src/entities/book"
+import { BASE_API_URL } from "~~/server/config"
 import { retrieveDataFromStorage } from "~~/server/utils/json"
 
 export default defineEventHandler(async (event) => {
@@ -12,14 +13,14 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const books = await retrieveDataFromStorage<Book[]>(getDataFileName("books"))
-    console.log(books)
-    if (!books) {
+    const response = await fetch(getDataFileName(BASE_API_URL, "books"))
+    if (!response.ok) {
       throw createError({
-        statusCode: 404,
-        statusMessage: "Books not found",
+        statusCode: response.status,
+        statusMessage: `Failed to fetch books: ${response.statusText}`,
       })
     }
+    const books: Book[] = await response.json()
 
     const book = books.find((book) => book.id === bookId)
 

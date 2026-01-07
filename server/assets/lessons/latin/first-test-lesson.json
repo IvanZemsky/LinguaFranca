@@ -1,97 +1,151 @@
 {
   "number": 1,
-  "title": "First test lesson",
-  "readableId": "first-test-lesson",
+  "title": "Латинский алфавит. Произношение. Варианты произношений.",
+  "readableId": "alphabet",
   "prevLessonReadableId": null,
   "nextLessonReadableId": "second-test-lesson",
   "content": [
     {
-      "id": "1",
-      "lessonId": "first-test-lesson",
+      "id": "lesson1_subheading_1",
+      "lessonId": "lesson1",
       "numberInLesson": "1",
       "type": "subheading",
-      "text": "Lorem ipsum",
+      "text": "Введение",
       "level": 1
     },
     {
-      "id": "2",
-      "lessonId": "first-test-lesson",
+      "id": "lesson1_paragraph_1",
+      "lessonId": "lesson1",
       "numberInLesson": "2",
-      "type": "language-text",
-      "title": "Test text",
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.",
-      "textTranslation": "Тестовый перевод Тестовый перевод Тестовый перевод Тестовый перевод",
-      "titleTranslation": "Тестовый перевод заголовка",
-      "vocabulary": [
-        {
-          "word": "Lorem ae, m",
-          "translation": "слово 1"
-        },
-        {
-          "word": "ipsum",
-          "translation": "слово 2"
-        }
-      ]
+      "type": "paragraph",
+      "text": "Латинский алфавит, также называемый римским, состоит из 25 букв (отсутствует W в классическом варианте, но оно используется в современных заимствованиях). Ниже представлена полная таблица с современным распространённым (школьным) произношением, принятым во многих странах, включая Россию."
     },
     {
-      "id": "3",
-      "type": "table",
-      "lessonId": "first-test-lesson",
+      "id": "lesson1_subheading_2",
+      "lessonId": "lesson1",
       "numberInLesson": "3",
-      "variant": "intersecting",
-      "title": "Table",
-      "headers": ["Header 2", "Header 3"],
-      "rows": [
-        ["Row 1 cell 1", "Row 1 cell 2", "Row 1 cell 3"],
-        ["Row 2 cell 1", "Row 2 cell 2", "Row 2 cell 3"],
-        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"],
-        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"]
-      ]
+      "type": "subheading",
+      "text": "Таблица латинского алфавита",
+      "level": 2
     },
     {
-      "id": "4",
+      "id": "lesson1_table_1",
+      "lessonId": "lesson1",
+      "numberInLesson": "4",
       "type": "table",
-      "lessonId": "first-test-lesson",
-      "numberInLesson": "3",
-      "variant": "headerless",
-      "title": "Table",
-      "headers": ["Header 1","Header 2", "Header 3"],
-      "rows": [
-        ["Row 1 cell 1", "Row 1 cell 2", "Row 1 cell 3"],
-        ["Row 2 cell 1", "Row 2 cell 2", "Row 2 cell 3"],
-        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"],
-        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"]
-      ]
-    },
-    {
-      "id": "5",
-      "type": "table",
-      "lessonId": "first-test-lesson",
-      "numberInLesson": "3",
-      "variant": "horizontal",
-      "title": "Table",
-      "headers": ["Header 1","Header 2", "Header 3", "Header 4"],
-      "rows": [
-        ["Row 1 cell 1", "Row 1 cell 2", "Row 1 cell 3"],
-        ["Row 2 cell 1", "Row 2 cell 2", "Row 2 cell 3"],
-        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"],
-        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"]
-      ]
-    },
-    {
-      "id": "6",
-      "type": "table",
-      "lessonId": "first-test-lesson",
-      "numberInLesson": "3",
       "variant": "vertical",
-      "title": "Table",
-      "headers": ["Header 1","Header 2", "Header 3"],
+      "title": "Латинский алфавит",
+      "headers": [
+        "Начертание",
+        "Название",
+        "Произношение",
+        "Начертание",
+        "Название",
+        "Произношение"
+      ],
       "rows": [
-        ["Row 1 cell 1", "Row 1 cell 2", "Row 1 cell 3"],
-        ["Row 2 cell 1", "Row 2 cell 2", "Row 2 cell 3"],
-        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"],
-        ["Row 3 cell 1", "Row 3 cell 2", "Row 3 cell 3"]
+        ["A a", "а", "[а]", "N n", "эн", "[н]"],
+        ["B b", "бэ", "[б]", "O o", "о", "[о]"],
+        [
+          "C c",
+          "цэ",
+          "[ц] перед e, i, y, [к] в остальных случаях",
+          "P p",
+          "пэ",
+          "[п]"
+        ],
+        ["D d", "дэ", "[д]", "Q q", "ку", "[к] (всегда в сочетании qu)"],
+        ["E e", "э", "[э]", "R r", "эр", "[р] (легкий раскат)"],
+        ["F f", "эф", "[ф]", "S s", "эс", "[с] (всегда глухое)"],
+        ["G g", "гэ", "[г]", "T t", "тэ", "[т]"],
+        ["H h", "ха", "[х] (лёгкий выдох)", "U u", "у", "[у]"],
+        [
+          "I i",
+          "и",
+          "[и]; [й] в начале слога перед гласной",
+          "V v",
+          "вэ",
+          "[в]"
+        ],
+        ["J j", "йот", "[й]", "X x", "икс", "[кс]"],
+        ["K k", "ка", "[к] (редко)", "Y y", "ипсилон", "[и]"],
+        ["L l", "эль", "[л] (мягкое)", "Z z", "зэта", "[з]"],
+        ["M m", "эм", "[м]", "", "", ""]
       ]
+    },
+    {
+      "id": "lesson1_subheading_3",
+      "lessonId": "lesson1",
+      "numberInLesson": "5",
+      "type": "subheading",
+      "text": "Правила современного произношения",
+      "level": 1
+    },
+    {
+      "id": "lesson1_paragraph_2",
+      "lessonId": "lesson1",
+      "numberInLesson": "6",
+      "type": "paragraph",
+      "text": "C произносится как [ц] перед гласными e, i, y (например: cera [цэра], cibus [цибус], cyma [цима]). Во всех остальных позициях — как [к] (например: caput [капут], clarus [кларус]). G всегда произносится как твёрдый [г] (например: gens [гэнс], magister [магистэр]). \n\n S всегда глухое, как русское [с] (например: rosa [роса]). V произносится как [в] (например: vita [вита])."
+    },
+    {
+      "id": "lesson1_paragraph_3",
+      "lessonId": "lesson1",
+      "numberInLesson": "7",
+      "type": "paragraph",
+      "text": "I в начале слова или слога перед гласной читается как [й] (например: Iulius [Юлиус], maior [майор]). В остальных случаях — как [и]. J (вариант I) используется редко и всегда читается как [й]."
+    },
+    {
+      "id": "lesson1_paragraph_4",
+      "lessonId": "lesson1",
+      "numberInLesson": "8",
+      "type": "paragraph",
+      "text": "Буквосочетания: QU произносится [кв] (например: qui [кви]). TH произносится [т] (например: theatrum [тэатрум]). PH произносится [ф] (например: philosophia [философия]). CH произносится [х] (например: pulcher [пульхэр])."
+    },
+    {
+      "id": "lesson1_subheading_4",
+      "lessonId": "lesson1",
+      "numberInLesson": "9",
+      "type": "subheading",
+      "text": "Правила ударения",
+      "level": 1
+    },
+    {
+      "id": "lesson1_paragraph_5",
+      "lessonId": "lesson1",
+      "numberInLesson": "10",
+      "type": "paragraph",
+      "text": "В латинском языке ударение никогда не падает на последний слог. Основные правила: 1. В словах из двух слогов ударение падает на первый слог (ró-sa, pá-ter). 2. В словах из трёх и более слогов: Ударение падает на предпоследний (второй с конца) слог, если он долгий. Ударение падает на третий с конца, если предпоследний слог краткий."
+    },
+    {
+      "id": "lesson1_subheading_5",
+      "lessonId": "lesson1",
+      "numberInLesson": "11",
+      "type": "subheading",
+      "text": "Долгота и краткость слогов",
+      "level": 1
+    },
+    {
+      "id": "lesson1_paragraph_6",
+      "lessonId": "lesson1",
+      "numberInLesson": "12",
+      "type": "paragraph",
+      "text": "Для определения ударения важно знать, долог ли предпоследний слог. Слог считается долгим, если: Его гласная является долгой по природе (обозначается в словаре чертой сверху: ā, ē, ō, ū, ī). Его гласная является краткой, но стоит перед двумя или более согласными (кроме сочетаний bl, br, pl, pr, dl, dr, tl, tr, cl, cr, gl, gr), либо перед буквами x или z."
+    },
+    {
+      "id": "lesson1_paragraph_7",
+      "lessonId": "lesson1",
+      "numberInLesson": "13",
+      "type": "paragraph",
+      "text": "Примеры: Fortuna (судьба): предпоследний слог tū долог (долгая гласная), ударение на нём. Agricola (земледелец): предпоследний слог cŏ краток (краткая гласная перед одной согласной), ударение переходит на третий с конца: грИ."
+    },
+    {
+      "id": "lesson1_note_1",
+      "lessonId": "lesson1",
+      "numberInLesson": "14",
+      "type": "note",
+      "title": "О других вариантах произношения",
+      "text": "Важно знать, что кроме описанного выше современного или школьного произношения, существуют и другие авторитетные системы: \n\n Классическое (восстановленное) произношение: Реконструированное произношение I в. до н.э. Отличается от современного: C и G всегда твердые [к] и [г]; V произносится как [w]; дифтонги AE и OE как [ай] и [ой]; ударение менее выраженное. \n\n Немецкое произношение: Близко к современному, но C перед e, i, y читается как [ц], а V как [в]. \n\n Английское произношение: Ориентировано на чтение латинских слов в английском: C всегда [к], V всегда [в]. \n\n В большинстве учебных заведений России и стран СНГ для изучения языка, чтения научных девизов и терминов используется именно современное (школьное) произношение, изложенное в основном разделе урока."
     }
   ]
 }

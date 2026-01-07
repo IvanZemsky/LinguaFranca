@@ -1,4 +1,5 @@
 import type { Lesson } from "~~/app/src/entities/lesson"
+import { BASE_API_URL } from "~~/server/config"
 import { getDataFileName, retrieveDataFromStorage } from "~~/server/utils/json"
 
 export default defineEventHandler(async (event) => {
@@ -20,9 +21,17 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const lesson = await retrieveDataFromStorage<Lesson>(
-      getDataFileName("lessons", bookId, lessonName)
+    const response = await fetch(
+      getDataFileName(BASE_API_URL, "lessons", bookId, lessonName)
     )
+    if (!response.ok) {
+      throw createError({
+        statusCode: response.status,
+        statusMessage: `Failed to fetch lesson: ${response.statusText}`,
+      })
+    }
+
+    const lesson = await response.json()
     return lesson
   } catch (error: any) {
     if (error?.statusCode) {

@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import type { LessonNote } from "~/src/entities/lesson"
+
 type Props = {
-  title: string
-  text: string
+  data: LessonNote
 }
-const { title, text } = defineProps<Props>()
+const { data } = defineProps<Props>()
+const { title, text } = data
 </script>
 
 <template>
@@ -52,6 +54,7 @@ const { title, text } = defineProps<Props>()
   border-radius: 50%;
 }
 .text {
-  font-size: 0.875rem;
+  white-space: pre-line;
+  font-size: 0.9rem;
 }
 </style>
