@@ -32,6 +32,24 @@ useHead({
         notFoundError: "Ничего не найдено",
       },
     }),
+  meta: [
+    {
+      property: "og:title",
+      content: () => lesson.value?.title || "Урок языкового курса",
+    },
+    {
+      property: "og:type",
+      content: "article",
+    },
+    {
+      property: "og:locale",
+      content: "ru_RU",
+    },
+    {
+      property: "og:site_name",
+      content: "Языковой курс Lingua Franca",
+    },
+  ],
 })
 </script>
 
@@ -40,7 +58,7 @@ useHead({
     <p v-if="pending">Загрузка</p>
 
     <template v-else-if="error">
-      <p v-if="error.statusCode === 404">Книга не найдена</p>
+      <p v-if="error.statusCode === 404">Урок не найден</p>
       <p v-else>Ошибка</p>
     </template>
 
