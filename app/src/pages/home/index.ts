@@ -1,0 +1,1 @@
+export {useHomePageMeta} from "./model"

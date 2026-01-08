@@ -1,0 +1,1 @@
+export {useLessonPageMeta} from "./model"

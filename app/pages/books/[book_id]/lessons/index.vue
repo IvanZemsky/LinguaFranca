@@ -9,6 +9,10 @@ const {
   error,
   pending,
 } = useFetchSectionsByBookId(bookId as string)
+
+useHead({
+  title: "Список уроков",
+})
 </script>
 
 <template>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useHomePageMeta } from "~/src/pages/home"
 import { UiNuxtBtnLink } from "~/src/shared/ui"
 
 const showContent = ref(false)
@@ -9,6 +10,8 @@ onMounted(() => {
     showContent.value = true
   }, 300)
 })
+
+useHomePageMeta()
 </script>
 
 <template>

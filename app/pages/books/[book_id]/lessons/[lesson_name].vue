@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useFetchLessonByBookIdAndReadableId } from "~/src/entities/lesson"
 import { createAnchorId, LessonContentPart } from "~/src/features/lesson"
+import { useLessonPageMeta } from "~/src/pages/lesson"
 import { resolveTitle } from "~/src/shared/lib"
 import { UiNuxtBtnLink } from "~/src/shared/ui"
 import { ArrowLeftIcon, ArrowRightIcon } from "~/src/shared/ui/icons"
@@ -19,38 +20,7 @@ const subheadings = computed(() =>
   lesson.value?.content.filter((item) => item.type === "subheading")
 )
 
-useHead({
-  title: () =>
-    resolveTitle({
-      isPending: pending.value,
-      isSuccess: !!lesson.value,
-      error: error.value,
-      values: {
-        success: lesson.value?.title || "Ошибка",
-        pending: "Загрузка",
-        error: "Ошибка",
-        notFoundError: "Ничего не найдено",
-      },
-    }),
-  meta: [
-    {
-      property: "og:title",
-      content: () => lesson.value?.title || "Урок языкового курса",
-    },
-    {
-      property: "og:type",
-      content: "article",
-    },
-    {
-      property: "og:locale",
-      content: "ru_RU",
-    },
-    {
-      property: "og:site_name",
-      content: "Языковой курс Lingua Franca",
-    },
-  ],
-})
+useLessonPageMeta(lesson, pending, error)
 </script>
 
 <template>

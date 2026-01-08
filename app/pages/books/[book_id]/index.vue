@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { useFetchBookById } from "~/src/entities/book"
+import { useBooksPageMeta } from "~/src/pages/books"
 import { UiNuxtBtnLink } from "~/src/shared/ui"
 
 const bookId = useRoute().params.book_id
 const { data: book, error, pending } = useFetchBookById(bookId as string)
+
+useBooksPageMeta(book, pending, error)
 </script>
 
 <template>
