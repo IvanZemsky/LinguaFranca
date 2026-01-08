@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { useFetchBooks } from "~/src/entities/book"
 import { BookCard } from "~/src/features/book"
+import { useBooksPageMeta } from "~/src/pages/books"
 
 const { data: books } = useFetchBooks()
+
+useBooksPageMeta()
 </script>
 
 <template>

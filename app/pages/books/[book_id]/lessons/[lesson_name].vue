@@ -5,6 +5,7 @@ import { useLessonPageMeta } from "~/src/pages/lesson"
 import { resolveTitle } from "~/src/shared/lib"
 import { UiNuxtBtnLink } from "~/src/shared/ui"
 import { ArrowLeftIcon, ArrowRightIcon } from "~/src/shared/ui/icons"
+import UiButton from "~/src/shared/ui/kit/button/ui-button.vue"
 
 const route = useRoute()
 const bookId = route.params.book_id as string
@@ -35,6 +36,21 @@ useLessonPageMeta(lesson, pending, error)
     <div class="content" v-if="!pending && lesson">
       <div class="menu">
         <div class="menu-blocks">
+          <UiButton
+            class="toggle-menu-btn"
+            size="sm"
+            variant="ghost"
+            color="secondary"
+          >
+            <template #icon>
+              <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </template>
+          </UiButton>
+
           <div v-if="subheadings?.length" class="menu-block">
             <p class="menu-title">Навигация по уроку</p>
             <a
@@ -119,6 +135,29 @@ useLessonPageMeta(lesson, pending, error)
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  z-index: 10;
+}
+
+.toggle-menu-btn {
+  position: absolute;
+  top: -10px;
+  right: -80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  & > .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  & > .burger > span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--c-neutral);
+  }
 }
 
 .menu-block {

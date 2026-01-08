@@ -1,0 +1,1 @@
+export {useBookPageMeta} from "./model"

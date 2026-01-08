@@ -1,39 +1,20 @@
-import type { NuxtError } from "#app"
-import type { Book } from "~/src/entities/book"
-import { resolveTitle } from "~/src/shared/lib"
-
-export function useBooksPageMeta(
-  book: Ref<Book | undefined>,
-  pending: Ref<boolean>,
-  error: Ref<NuxtError<unknown> | undefined>
-) {
+export function useBooksPageMeta() {
   useHead({
-    title: () =>
-      resolveTitle({
-        isPending: pending.value,
-        isSuccess: !!book.value,
-        error: error.value,
-        values: {
-          success: book.value?.name || "Ошибка",
-          pending: "Загрузка",
-          error: "Ошибка",
-          notFoundError: "Ничего не найдено",
-        },
-      }),
+    title: "Самоучители",
     meta: [
       {
         property: "og:title",
-        content: () => book.value?.name || "Ничего не найдено",
+        content: "Самоучители",
       },
       {
         property: "og:description",
-        content: () =>
-          "Самоучитель языка - " + book.value?.desc || "Ничего не найдено",
+        content:
+          "Самоучители языка - Сборник бесплатных уроков, текстов, шпаргалок и других материалов для изучения языков",
       },
       {
         name: "description",
-        content: () =>
-          "Самоучитель языка - " + book.value?.desc || "Ничего не найдено",
+        content:
+          "Самоучители языка - Сборник бесплатных уроков, текстов, шпаргалок и других материалов для изучения языков",
       },
       {
         property: "og:type",
