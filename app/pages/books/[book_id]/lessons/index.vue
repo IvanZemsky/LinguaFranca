@@ -51,7 +51,7 @@ useHead({
 
 <style scoped>
 .lessons {
-  max-width: 790px;
+  max-width: 900px;
   width: 100%;
   margin: 24px auto 0 auto;
   padding: 0 25px;
@@ -78,9 +78,10 @@ useHead({
 }
 
 .lesson-item {
+  font-size: 0.875rem;
   transition: 0.15s color linear;
 
-  &:hover {
+  & a:hover {
     color: var(--c-primary);
     text-decoration: underline;
   }

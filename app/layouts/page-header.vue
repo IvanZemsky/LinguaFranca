@@ -37,6 +37,11 @@ import { MoonIcon } from "~/src/shared/ui/icons"
 </template>
 
 <style scoped>
+.header {
+  position: relative;
+  z-index: 800;
+  background-color: var(--c-primary-contrast);
+}
 .logo {
   font-family: Lora;
   font-size: 22px;

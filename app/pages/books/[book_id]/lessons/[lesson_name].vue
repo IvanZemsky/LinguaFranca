@@ -21,7 +21,13 @@ const subheadings = computed(() =>
   lesson.value?.content.filter((item) => item.type === "subheading")
 )
 
+const isMenuOpen = ref(true)
+
 useLessonPageMeta(lesson, pending, error)
+
+function handleToggleMenuBtnClick() {
+  isMenuOpen.value = !isMenuOpen.value
+}
 </script>
 
 <template>
@@ -33,37 +39,40 @@ useLessonPageMeta(lesson, pending, error)
       <p v-else>Ошибка</p>
     </template>
 
-    <div class="content" v-if="!pending && lesson">
-      <div class="menu">
-        <div class="menu-blocks">
-          <UiButton
-            class="toggle-menu-btn"
-            size="sm"
-            variant="ghost"
-            color="secondary"
-          >
-            <template #icon>
-              <div class="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </template>
-          </UiButton>
-
-          <div v-if="subheadings?.length" class="menu-block">
-            <p class="menu-title">Навигация по уроку</p>
-            <a
-              v-for="subheading in subheadings"
-              :href="`#${createAnchorId(
-                subheading.text,
-                subheading.numberInLesson
-              )}`"
-              :key="subheading.numberInLesson"
-              class="menu-link"
+    <div :class="['content', { open: isMenuOpen }]" v-if="!pending && lesson">
+      <div :class="['menu-wrap', { open: isMenuOpen }]">
+        <div class="menu">
+          <div class="menu-blocks">
+            <UiButton
+              @click="handleToggleMenuBtnClick"
+              class="toggle-menu-btn"
+              size="sm"
+              variant="ghost"
+              color="secondary"
             >
-              {{ subheading.text }}
-            </a>
+              <template #icon>
+                <div class="burger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </template>
+            </UiButton>
+
+            <div v-if="subheadings?.length" class="menu-block">
+              <p class="menu-title">Навигация по уроку</p>
+              <a
+                v-for="subheading in subheadings"
+                :href="`#${createAnchorId(
+                  subheading.text,
+                  subheading.numberInLesson
+                )}`"
+                :key="subheading.numberInLesson"
+                class="menu-link"
+              >
+                {{ subheading.text }}
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -112,9 +121,15 @@ useLessonPageMeta(lesson, pending, error)
 
 <style scoped>
 .content {
+  position: relative;
   display: flex;
-  gap: 1.25rem;
+  padding-left: 0;
   height: 100%;
+  transition: padding-left 0.3s ease-in-out;
+
+  &.open {
+    padding-left: calc(236px + 1.25rem);
+  }
 }
 
 .lesson-title {
@@ -122,8 +137,26 @@ useLessonPageMeta(lesson, pending, error)
   font-weight: 700;
 }
 
+.menu-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  z-index: 10;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
 .menu {
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 236px;
+  height: 100%;
   padding: 2rem 1.125rem;
   background-color: var(--c-secondary-extra-light);
 }
