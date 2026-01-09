@@ -115,6 +115,30 @@ function handleToggleMenuBtnClick() {
           </UiNuxtBtnLink>
         </div>
       </div>
+
+      <div class="change-btns-mobile">
+        <UiNuxtBtnLink
+          v-if="lesson.prevLessonReadableId"
+          size="lg"
+          :to="`/books/${bookId}/lessons/${lesson.prevLessonReadableId}`"
+        >
+          Предыдущий урок
+          <template #icon>
+            <ArrowLeftIcon />
+          </template>
+        </UiNuxtBtnLink>
+
+        <UiNuxtBtnLink
+          v-if="lesson.nextLessonReadableId"
+          size="lg"
+          :to="`/books/${bookId}/lessons/${lesson.nextLessonReadableId}`"
+        >
+          Следующий урок
+          <template #icon>
+            <ArrowRightIcon />
+          </template>
+        </UiNuxtBtnLink>
+      </div>
     </div>
   </div>
 </template>
@@ -126,6 +150,7 @@ function handleToggleMenuBtnClick() {
   padding-left: 0;
   height: 100%;
   transition: padding-left 0.3s ease-in-out;
+  min-width: 0;
 
   &.open {
     padding-left: calc(236px + 1.25rem);
@@ -216,21 +241,26 @@ function handleToggleMenuBtnClick() {
 }
 
 .lesson-wrap {
+  position: relative;
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
   padding: 1.25rem;
   gap: 1.25rem;
+  min-width: 0;
 }
 
 .lesson-content {
   display: flex;
   flex-direction: column;
   align-self: flex-start;
+  align-items: flex-start;
   gap: 1.75rem;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  min-width: 0;
+  flex: 1;
 }
 
 .change-btn-wrap {
@@ -243,5 +273,41 @@ function handleToggleMenuBtnClick() {
 }
 :deep(.ui-button.ghost).change-lesson-btn {
   color: var(--c-neutral);
+}
+
+.change-btns-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .toggle-menu-btn {
+    display: none;
+  }
+  .content.open {
+    padding-left: 0;
+  }
+  .menu-wrap {
+    transform: translateX(0);
+
+    &.open {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@media screen and (max-width: 778px) {
+  .content {
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+  .change-btn-wrap {
+    display: none;
+  }
+  .change-btns-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    width: 100%;
+  }
 }
 </style>

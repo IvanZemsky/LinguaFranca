@@ -1,21 +1,23 @@
 /* Table Container */
 
 .ui-table-container {
-  width: fit-content;
   font-size: 0.875rem;
   background-color: var(--c-secondary-extra-light);
   border: 1px solid var(--c-secondary-light);
   border-radius: 0.75rem;
-  overflow: auto;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
   margin: 0 auto;
+  align-self: center;
 }
 
 .ui-table {
   display: table;
-  flex-shrink: 0;
-  width: 100%;
+  width: max-content; /* Это правильно, оставляем */
+  min-width: 100%; /* Чтобы на широких экранах она не была слишком узкой */
   border-collapse: collapse;
-  border-spacing: 0;
 }
 
 /* Table Row */
