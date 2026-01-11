@@ -18,4 +18,10 @@ const { text } = data
   white-space: pre-line;
   font-size: 1rem;
 }
+
+@media screen and (max-width: 632px) {
+  .paragraph {
+    font-size: 0.875rem;
+  }
+}
 </style>

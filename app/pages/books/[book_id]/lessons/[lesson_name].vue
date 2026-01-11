@@ -80,7 +80,7 @@ useLessonPageMeta(lesson, pending, error)
         </div>
 
         <section class="lesson-content">
-          <h1 class="lesson-title">{{ lesson.title }}</h1>
+          <h1 class="lesson-title">{{ lesson.number }}. {{ lesson.title }}</h1>
           <LessonContentPart
             v-for="part in lesson.content"
             :key="part.numberInLesson"
@@ -280,6 +280,15 @@ useLessonPageMeta(lesson, pending, error)
     justify-content: center;
     gap: 1.25rem;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 632px) {
+  .lesson-title {
+    font-size: 1rem;
+  }
+  .lesson-content {
+    gap: 1rem;
   }
 }
 </style>
