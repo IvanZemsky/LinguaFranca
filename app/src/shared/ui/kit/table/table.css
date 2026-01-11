@@ -15,8 +15,8 @@
 
 .ui-table {
   display: table;
-  width: max-content; /* Это правильно, оставляем */
-  min-width: 100%; /* Чтобы на широких экранах она не была слишком узкой */
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
 }
 

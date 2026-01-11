@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { LessonTable } from "@/src/entities/lesson"
-import { LESSON_TABLE_TYPES } from "../../../model/tables"
+import { LESSON_TABLE_TYPES } from "../../model/tables"
 
 type Props = {
   data: LessonTable
@@ -18,13 +18,9 @@ const { data } = defineProps<Props>()
 <style scoped>
 .wrap {
   display: grid;
-  grid-template-columns: minmax(
-    0,
-    1fr
-  );
+  grid-template-columns: minmax(0, 1fr);
   width: 100%;
   margin: 0 auto;
- 
 }
 
 :deep(table) {

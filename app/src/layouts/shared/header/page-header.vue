@@ -1,12 +1,29 @@
 <script setup lang="ts">
 import { NuxtLink } from "#components"
-import { MoonIcon } from "~/src/shared/ui/icons"
+import { ToggleLessonMenuBtn, useLessonMenuStore } from "~/src/features/lesson"
+import ThemeBtn from "./theme-btn.vue"
+import { useThemeStore } from "~/src/shared/model"
+
+const route = useRoute()
+
+const isLessonPage = computed(() => {
+  const path = route.path
+  return /^\/books\/[^/]+\/lessons\/[^/]+$/.test(path)
+})
+
+const menuStore = useLessonMenuStore()
+const themeStore = useThemeStore()
 </script>
 
 <template>
   <header class="header">
     <div class="content">
       <nav class="navigation">
+        <ToggleLessonMenuBtn
+          v-if="isLessonPage"
+          @click="menuStore.toggleMenu"
+          class="toggle-menu-btn"
+        />
         <!-- prettier-ignore -->
         <NuxtLink class="logo" to="/">
           <span class="logo-letter">L</span>ingua<span class="logo-letter">F</span>ranca
@@ -28,9 +45,7 @@ import { MoonIcon } from "~/src/shared/ui/icons"
         </ul>
       </nav>
 
-      <button class="theme-btn">
-        <MoonIcon />
-      </button>
+      <ThemeBtn @click="themeStore.toggleTheme" />
     </div>
     <div class="bottom-border" />
   </header>
@@ -41,6 +56,9 @@ import { MoonIcon } from "~/src/shared/ui/icons"
   position: relative;
   z-index: 800;
   background-color: var(--c-primary-contrast);
+}
+.toggle-menu-btn {
+  display: none;
 }
 .logo {
   font-family: Lora;
@@ -89,30 +107,18 @@ import { MoonIcon } from "~/src/shared/ui/icons"
   }
 }
 
-.theme-btn {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  color: var(--c-main-text);
-
-  & svg {
-    flex-shrink: 0;
-    width: 20px;
-    stroke: var(--c-neutral);
-    stroke-width: 1px;
-    transition: stroke 150ms linear;
-  }
-
-  &:hover svg {
-    stroke: var(--c-primary);
-  }
-}
-
 .bottom-border {
   height: 3px;
   background-color: #eee;
+}
+
+@media screen and (max-width: 1000px) {
+  .toggle-menu-btn {
+    display: flex;
+  }
+
+  :deep(.ui-button.sm).toggle-menu-btn {
+    padding: 4px;
+  }
 }
 </style>

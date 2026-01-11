@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { useFetchLessonByBookIdAndReadableId } from "~/src/entities/lesson"
-import { createAnchorId, LessonContentPart } from "~/src/features/lesson"
+import {
+  createAnchorId,
+  LessonContentPart,
+  ToggleLessonMenuBtn,
+  useLessonMenuStore,
+} from "~/src/features/lesson"
 import { useLessonPageMeta } from "~/src/pages/lesson"
-import { resolveTitle } from "~/src/shared/lib"
 import { UiNuxtBtnLink } from "~/src/shared/ui"
 import { ArrowLeftIcon, ArrowRightIcon } from "~/src/shared/ui/icons"
-import UiButton from "~/src/shared/ui/kit/button/ui-button.vue"
 
 const route = useRoute()
 const bookId = route.params.book_id as string
@@ -21,13 +24,11 @@ const subheadings = computed(() =>
   lesson.value?.content.filter((item) => item.type === "subheading")
 )
 
-const isMenuOpen = ref(true)
+const lessonMenuStore = useLessonMenuStore()
+const { toggleMenu } = lessonMenuStore
+const { isOpen: isMenuOpen } = storeToRefs(lessonMenuStore)
 
 useLessonPageMeta(lesson, pending, error)
-
-function handleToggleMenuBtnClick() {
-  isMenuOpen.value = !isMenuOpen.value
-}
 </script>
 
 <template>
@@ -43,21 +44,7 @@ function handleToggleMenuBtnClick() {
       <div :class="['menu-wrap', { open: isMenuOpen }]">
         <div class="menu">
           <div class="menu-blocks">
-            <UiButton
-              @click="handleToggleMenuBtnClick"
-              class="toggle-menu-btn"
-              size="sm"
-              variant="ghost"
-              color="secondary"
-            >
-              <template #icon>
-                <div class="burger">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </template>
-            </UiButton>
+            <ToggleLessonMenuBtn @click="toggleMenu" class="toggle-menu-btn" />
 
             <div v-if="subheadings?.length" class="menu-block">
               <p class="menu-title">Навигация по уроку</p>
@@ -200,22 +187,6 @@ function handleToggleMenuBtnClick() {
   position: absolute;
   top: -10px;
   right: -80px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-
-  & > .burger {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  & > .burger > span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background-color: var(--c-neutral);
-  }
 }
 
 .menu-block {
@@ -288,6 +259,7 @@ function handleToggleMenuBtnClick() {
   }
   .menu-wrap {
     transform: translateX(0);
+    border-right: 3px solid #eee;
 
     &.open {
       transform: translateX(-100%);

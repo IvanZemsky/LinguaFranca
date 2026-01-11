@@ -1,18 +1,9 @@
 <script setup lang="ts">
-import PageHeader from "./page-header.vue"
+import { DefaultLayout } from "~/src/layouts/default"
 </script>
 
 <template>
-  <div class="layout">
-    <PageHeader />
+  <DefaultLayout>
     <slot />
-  </div>
+  </DefaultLayout>
 </template>
-
-<style scoped>
-.layout {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-</style>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { LessonSubheading } from "~/src/entities/lesson"
-import { createAnchorId } from "../../model/anchors";
+import { createAnchorId } from "../../shared/anchors";
 
 type Props = {
   data: LessonSubheading
