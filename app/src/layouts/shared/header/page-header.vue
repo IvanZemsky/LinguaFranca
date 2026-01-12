@@ -1,32 +1,18 @@
 <script setup lang="ts">
 import { NuxtLink } from "#components"
-import { ToggleLessonMenuBtn, useLessonMenuStore } from "~/src/features/lesson"
 import ThemeBtn from "./theme-btn.vue"
 import { useThemeStore } from "~/src/shared/model"
-import { CrossIcon } from "~/src/shared/ui/icons"
+import { CrossIcon, BurgerIcon } from "~/src/shared/ui/icons"
 import { UiButton } from "~/src/shared/ui"
-
-const route = useRoute()
-
-const isLessonPage = computed(() => {
-  const path = route.path
-  return /^\/books\/[^/]+\/lessons\/[^/]+$/.test(path)
-})
 
 const isHeaderMenuOpen = ref(false)
 
-const menuStore = useLessonMenuStore()
 const themeStore = useThemeStore()
 </script>
 
 <template>
   <header class="header">
     <div class="content">
-      <ToggleLessonMenuBtn
-        v-if="isLessonPage"
-        @click="menuStore.toggleMenu"
-        class="toggle-lesson-menu-btn"
-      />
       <!-- prettier-ignore -->
       <NuxtLink class="logo" to="/">
         <span class="logo-letter">L</span>ingua<span class="logo-letter">F</span>ranca
@@ -71,11 +57,7 @@ const themeStore = useThemeStore()
         color="secondary"
       >
         <template #icon>
-          <div class="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <BurgerIcon />
         </template>
       </UiButton>
     </div>
@@ -88,9 +70,6 @@ const themeStore = useThemeStore()
   position: relative;
   z-index: 800;
   background-color: var(--c-primary-contrast);
-}
-.toggle-lesson-menu-btn {
-  display: none;
 }
 .logo {
   font-family: Lora;
@@ -157,10 +136,6 @@ const themeStore = useThemeStore()
 }
 
 @media screen and (max-width: 1000px) {
-  .toggle-lesson-menu-btn {
-    display: flex;
-  }
-
   :deep(.ui-button.sm).toggle-menu-btn {
     padding: 4px;
   }
@@ -202,7 +177,7 @@ const themeStore = useThemeStore()
     top: 1rem;
     right: 1rem;
   }
-  
+
   .theme-btn {
     position: absolute;
     bottom: 1rem;
@@ -210,23 +185,8 @@ const themeStore = useThemeStore()
   }
 
   .toggle-header-menu-btn {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
     margin-left: auto;
-    gap: 0.25rem;
-
-    & > .burger {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    & > .burger > span {
-      display: block;
-      width: 20px;
-      height: 2px;
-      background-color: var(--c-neutral);
-    }
   }
 }
 

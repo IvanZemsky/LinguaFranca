@@ -41,6 +41,12 @@ useLessonPageMeta(lesson, pending, error)
     </template>
 
     <div :class="['content', { open: isMenuOpen }]" v-if="!pending && lesson">
+      <ToggleLessonMenuBtn
+        variant="filled"
+        @click="toggleMenu"
+        class="toggle-menu-btn-mobile"
+      />
+
       <div :class="['menu-wrap', { open: isMenuOpen }]">
         <div class="menu">
           <div class="menu-blocks">
@@ -144,6 +150,10 @@ useLessonPageMeta(lesson, pending, error)
   }
 }
 
+.toggle-menu-btn-mobile {
+  display: none;
+}
+
 .lesson-title {
   font-size: 1.65rem;
   font-weight: 700;
@@ -156,7 +166,7 @@ useLessonPageMeta(lesson, pending, error)
   height: 100%;
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
-  z-index: 10;
+  z-index: 30;
 
   &.open {
     transform: translateX(0);
@@ -253,6 +263,16 @@ useLessonPageMeta(lesson, pending, error)
 @media screen and (max-width: 1000px) {
   .toggle-menu-btn {
     display: none;
+  }
+  .toggle-menu-btn-mobile {
+    position: fixed;
+    top: 100vh;
+    transform: translateY(calc(-100% - 20px));
+    left: 24px;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    z-index: 20;
   }
   .content.open {
     padding-left: 0;
