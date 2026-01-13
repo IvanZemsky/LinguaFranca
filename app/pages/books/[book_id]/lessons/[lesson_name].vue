@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { useFetchLessonByBookIdAndReadableId } from "~/src/entities/lesson"
+import {
+  useFetchLessonByBookIdAndReadableId,
+} from "~/src/entities/lesson"
 import {
   createAnchorId,
   LessonContentPart,

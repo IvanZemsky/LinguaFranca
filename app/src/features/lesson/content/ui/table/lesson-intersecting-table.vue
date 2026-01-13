@@ -14,7 +14,6 @@ const { headers, rows, variant } = data
   <UiTable :variant="variant">
     <template #head>
       <UiTableHead v-if="headers.length">
-        <UiTableCell />
         <UiTableCell v-for="header in headers" :key="header">
           {{ header }}
         </UiTableCell>
@@ -25,7 +24,7 @@ const { headers, rows, variant } = data
         <UiTableCell v-if="cellIndex === 0" scope="row">
           {{ cell }}
         </UiTableCell>
-        <UiTableCell v-else-if="cellIndex !== 0">
+        <UiTableCell v-else>
           {{ cell }}
         </UiTableCell>
       </template>
