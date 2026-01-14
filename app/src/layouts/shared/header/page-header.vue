@@ -69,7 +69,8 @@ const themeStore = useThemeStore()
 .header {
   position: relative;
   z-index: 800;
-  background-color: var(--c-primary-contrast);
+  background-color: var(--c-main-surface);
+  transition: 0.4s background-color linear;
 }
 .logo {
   font-family: Lora;

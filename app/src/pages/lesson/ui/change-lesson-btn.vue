@@ -11,12 +11,12 @@ type Props = {
 const props = defineProps<Props>()
 
 const lessonToChangeFor =
-  props.variant === "prev" ? "nextLessonReadableId" : "prevLessonReadableId"
+  props.variant === "prev" ? "prevLessonReadableId" : "nextLessonReadableId"
 </script>
 
 <template>
   <UiNuxtBtnLink
-    v-show="lesson[lessonToChangeFor]"
+    v-show="!!lesson[lessonToChangeFor]"
     size="lg"
     variant="ghost"
     :to="`/books/${bookId}/lessons/${lesson[lessonToChangeFor]}`"

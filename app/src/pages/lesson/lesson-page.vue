@@ -31,16 +31,16 @@ useLessonPageMeta(lesson, pending, error)
       </template>
     </template>
 
+    <template #menu v-if="!pending && lesson">
+      <LessonMenu :lesson="lesson" />
+    </template>
+
     <template #prev-lesson-btn v-if="!pending && lesson">
       <ChangeLessonBtn variant="prev" :lesson="lesson" :book-id="bookId" />
     </template>
 
     <template #next-lesson-btn v-if="!pending && lesson">
       <ChangeLessonBtn variant="next" :lesson="lesson" :book-id="bookId" />
-    </template>
-
-    <template #menu v-if="!pending && lesson">
-      <LessonMenu :lesson="lesson" />
     </template>
 
     <template #lesson-content>

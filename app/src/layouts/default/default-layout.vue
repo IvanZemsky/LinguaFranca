@@ -17,5 +17,8 @@ const themeStore = useThemeStore()
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
+  background-color: var(--c-main-surface);
+  color: var(--c-main-text);
+  transition: 0.4s background-color linear;
 }
 </style>

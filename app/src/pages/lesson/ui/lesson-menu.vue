@@ -78,6 +78,7 @@ const { isOpen: isMenuOpen } = storeToRefs(lessonMenuStore)
   height: 100%;
   padding: 2rem 1.125rem;
   background-color: var(--c-secondary-extra-light);
+  transition: 0.4s background-color linear;
 }
 
 .menu-blocks {
