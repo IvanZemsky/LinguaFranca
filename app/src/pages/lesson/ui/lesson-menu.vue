@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { Lesson } from "~/src/entities/lesson"
+import { UiButton } from "~/src/shared/ui"
+import { CrossIcon } from "~/src/shared/ui/icons"
 import {
   createAnchorId,
   ToggleLessonMenuBtn,
@@ -31,6 +33,17 @@ const { isOpen: isMenuOpen } = storeToRefs(lessonMenuStore)
   <div :class="['menu-wrap', { open: isMenuOpen }]">
     <div class="menu">
       <div class="menu-blocks">
+        <UiButton
+          @click="toggleMenu"
+          class="close-menu-btn"
+          size="sm"
+          variant="ghost"
+        >
+          <template #icon>
+            <CrossIcon />
+          </template>
+        </UiButton>
+
         <ToggleLessonMenuBtn @click="toggleMenu" class="toggle-menu-btn" />
 
         <div v-if="subheadings?.length" class="menu-block">
@@ -53,6 +66,9 @@ const { isOpen: isMenuOpen } = storeToRefs(lessonMenuStore)
 </template>
 
 <style scoped>
+.close-menu-btn {
+  display: none;
+}
 .toggle-menu-btn-mobile {
   display: none;
 }
@@ -132,6 +148,13 @@ const { isOpen: isMenuOpen } = storeToRefs(lessonMenuStore)
     width: fit-content;
     height: fit-content;
     z-index: 20;
+  }
+  .close-menu-btn {
+    display: inline-flex;
+    position: absolute;
+    top: -24px;
+    right: 0;
+    z-index: 500;
   }
   .menu-wrap {
     transform: translateX(0);

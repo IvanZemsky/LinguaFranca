@@ -5,7 +5,7 @@ const route = useRoute()
 const bookId = route.params.book_id
 
 const {
-  data: sections,
+  data: sectionList,
   error,
   pending,
 } = useFetchSectionsByBookId(bookId as string)
@@ -17,8 +17,6 @@ useHead({
 
 <template>
   <section class="lessons">
-    <h1 class="title">Английский язык</h1>
-
     <p v-if="pending">Загрузка</p>
 
     <template v-else-if="error">
@@ -26,9 +24,13 @@ useHead({
       <p v-else>Ошибка</p>
     </template>
 
-    <div v-if="!pending && sections" class="lesson-sections">
+    <h1 class="title" v-if="!pending && sectionList">
+      {{ sectionList.bookTitle }}
+    </h1>
+
+    <div v-if="!pending && sectionList" class="lesson-sections">
       <div
-        v-for="section in sections"
+        v-for="section in sectionList.sections"
         :key="section.number"
         class="lesson-section"
       >

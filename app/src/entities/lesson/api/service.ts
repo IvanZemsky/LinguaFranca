@@ -1,9 +1,9 @@
 import type { BookId } from "@/src/entities/book"
-import type { Lesson, Section } from "../model/types"
+import type { Lesson, SectionListWithBookMainData } from "../model/lesson"
 
 export const lessonService = {
   async fetchSectionsByBookId(bookId: BookId) {
-    return await $fetch<Section[]>(getUrl(bookId))
+    return await $fetch<SectionListWithBookMainData>(getUrl(bookId))
   },
 
   async fetchLessonByBookIdAndReadableId(bookId: BookId, readableId: string) {

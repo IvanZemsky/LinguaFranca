@@ -2,14 +2,18 @@ export type {
   Lesson,
   LessonInfo,
   LessonNumber,
+  Section,
+  SectionListWithBookMainData,
+} from "./model/lesson"
+
+export type {
   LessonContent,
   LessonLanguageText,
   LessonParagraph,
   LessonSubheading,
   LessonNote,
   LessonTable,
-  Section,
-} from "./model/types"
+} from "./model/content"
 
 export {
   useFetchSectionsByBookId,

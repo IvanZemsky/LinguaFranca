@@ -1,25 +1,3 @@
-export type LessonNumber = number
-
-export type Section = {
-  number: number
-  title: string
-  lessons: LessonInfo[]
-  bookId: string
-}
-
-export type LessonInfo = {
-  id: string
-  number: LessonNumber
-  title: string
-  readableId: string
-  prevLessonReadableId: string | null
-  nextLessonReadableId: string | null
-}
-
-export type Lesson = LessonInfo & {
-  content: LessonContent[]
-}
-
 export type LessonContent =
   | LessonSubheading
   | LessonParagraph
