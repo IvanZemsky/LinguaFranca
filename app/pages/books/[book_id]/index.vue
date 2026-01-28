@@ -15,7 +15,7 @@ const mockLessonList: LessonListType = {
   lessonId: "lesson-123",
   numberInLesson: "1",
   type: "list",
-  variant: "ul",
+  variant: "ol",
   title: "Основные преимущества TypeScript",
   items: [
     {

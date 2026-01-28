@@ -20,6 +20,8 @@ const { data } = defineProps<Props>()
         v-for="(item, i) in data.items"
         :key="`${item.text}${i}`"
         :data="item"
+        :number="i + 1"
+        :parent-list-variant="data.variant"
       />
     </component>
   </div>
@@ -32,11 +34,12 @@ const { data } = defineProps<Props>()
 
 .list-title {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .list {
-  margin-left: 0;
-  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 </style>
