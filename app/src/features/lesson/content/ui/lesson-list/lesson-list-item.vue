@@ -5,13 +5,14 @@ type Props = {
   data: LessonListItem
   parentListVariant: "ol" | "ul" | null
   number: number
+  first?: boolean
 }
 
-const { data, parentListVariant } = defineProps<Props>()
+const { data, parentListVariant, first = false } = defineProps<Props>()
 </script>
 
 <template>
-  <li class="item">
+  <li :class="[`item`, { 'item--first': first }, parentListVariant]">
     <span :class="`item-text ${parentListVariant}`">
       <template v-if="parentListVariant === 'ol'">{{ number }}.</template>
       {{ data.text }}
@@ -32,23 +33,35 @@ const { data, parentListVariant } = defineProps<Props>()
 </template>
 
 <style scoped>
-.nested, .item {
+.nested {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding-left: 1rem;
 }
 
-.item{
-  margin-left: 0.5rem;
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.item-text, .item-text {
+.item {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.item-text {
   position: relative;
   padding-left: 0.875rem;
 }
 
-.item-text.ul::before, .item-text.li::before {
+.item-text.ol {
+  padding-left: 0;
+}
+
+.item-text.ul::before,
+.item-text.li::before {
   content: "";
   position: absolute;
   top: 7px;

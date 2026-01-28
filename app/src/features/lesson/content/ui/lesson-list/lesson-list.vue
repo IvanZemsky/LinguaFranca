@@ -21,6 +21,7 @@ const { data } = defineProps<Props>()
         :key="`${item.text}${i}`"
         :data="item"
         :number="i + 1"
+        first
         :parent-list-variant="data.variant"
       />
     </component>
