@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useFetchBooks } from "~/src/entities/book"
+import type { LessonList } from "~/src/entities/lesson"
 import { BookCard } from "~/src/features/book"
 import { useBooksPageMeta } from "~/src/pages/books"
 

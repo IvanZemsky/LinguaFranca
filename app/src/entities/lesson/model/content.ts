@@ -4,6 +4,7 @@ export type LessonContent =
   | LessonNote
   | LessonLanguageText
   | LessonTable
+  | LessonList
 
 export type LessonParagraph = {
   id: string
@@ -41,6 +42,22 @@ export type LessonLanguageText = {
   textTranslation: string
   text: string
   vocabulary: Word[]
+}
+
+export type LessonList = {
+  id: string
+  lessonId: string
+  numberInLesson: string
+  type: "list"
+  title: string
+  variant: "ol" | "ul"
+  items: LessonListItem[]
+}
+
+export type LessonListItem = {
+  text: string
+  variant: "ol" | "ul" | "li"
+  items?: LessonListItem[]
 }
 
 export type Word = {

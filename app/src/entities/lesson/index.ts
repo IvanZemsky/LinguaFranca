@@ -13,6 +13,8 @@ export type {
   LessonSubheading,
   LessonNote,
   LessonTable,
+  LessonList,
+  LessonListItem,
 } from "./model/content"
 
 export {

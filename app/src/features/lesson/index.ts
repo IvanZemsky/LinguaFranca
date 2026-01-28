@@ -6,6 +6,7 @@ export { default as LessonVerticalTable } from "./content/ui/table/lesson-vertic
 export { default as LessonIntersectingTable } from "./content/ui/table/lesson-intersecting-table.vue"
 export { default as LessonSubheading } from "./content/ui/lesson-subheading.vue"
 export { default as LessonContentPart } from "./content/ui/lesson-content-part.vue"
+export { default as LessonList } from "./content/ui/lesson-list/lesson-list.vue"
 
 export { createAnchorId } from "./shared/anchors"
 export { useLessonMenuStore } from "./shared/menu.store"
