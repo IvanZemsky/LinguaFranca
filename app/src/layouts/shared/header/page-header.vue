@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { NuxtLink } from "#components"
 import ThemeBtn from "./theme-btn.vue"
 import { useThemeStore } from "~/src/shared/model"
 import { CrossIcon, BurgerIcon } from "~/src/shared/ui/icons"
 import { UiButton } from "~/src/shared/ui"
+import HeaderLinks from "./header-links.vue"
 
 const isHeaderMenuOpen = ref(false)
 
@@ -20,20 +20,7 @@ const themeStore = useThemeStore()
 
       <div :class="['navigation-wrap', { open: isHeaderMenuOpen }]">
         <nav class="navigation">
-          <ul class="links">
-            <li>
-              <NuxtLink class="link" to="/books">Учебники</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink class="link" to="/books">Тексты</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink class="link" to="/books">Шпаргалки</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink class="link" to="/books">Полезные материалы</NuxtLink>
-            </li>
-          </ul>
+          <HeaderLinks class="links" />
         </nav>
 
         <UiButton
@@ -116,19 +103,6 @@ const themeStore = useThemeStore()
   align-items: center;
   gap: 16px;
   padding-top: 4px;
-}
-.link {
-  font-size: 16px;
-  color: var(--c-neutral);
-  transition: color 150ms linear;
-
-  &:hover {
-    color: var(--c-primary-light);
-  }
-
-  &.active {
-    color: var(--c-primary);
-  }
 }
 
 .bottom-border {
