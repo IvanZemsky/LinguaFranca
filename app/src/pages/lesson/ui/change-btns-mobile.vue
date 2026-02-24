@@ -52,9 +52,11 @@ const props = defineProps<Props>()
   }
   .change-btns-mobile {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 1.25rem;
     width: 100%;
+    padding: 1.25rem;
 
     &:deep(.ui-button):first-child {
       flex-direction: row-reverse;

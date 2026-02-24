@@ -23,15 +23,29 @@ useBookPageMeta(book, pending, error)
       <template #not-found>
         <p>Книга не найдена</p>
       </template>
-      <template #default-error><p>Ошибка</p></template>
+      <template #default-error>
+        <p>Ошибка</p>
+      </template>
 
-      <template #content>
-        <UiNuxtBtnLink
-          v-if="!pending && book"
-          :to="`/books/${book.id}/lessons`"
-        >
-          Список уроков
-        </UiNuxtBtnLink>
+      <template #content="{ data }">
+        <h1 class="title">{{ data.name }}</h1>
+        <p class="desc">
+          {{ data.description }}
+        </p>
+        <div class="links">
+          <UiNuxtBtnLink :to="`/books/${data.id}/lessons`">
+            Список уроков
+          </UiNuxtBtnLink>
+          <UiNuxtBtnLink variant="ghost" :to="`/books/${data.id}/cribs`">
+            Шпаргалки
+          </UiNuxtBtnLink>
+          <UiNuxtBtnLink variant="ghost" :to="`/books/${data.id}/textx`">
+            Тексты
+          </UiNuxtBtnLink>
+          <UiNuxtBtnLink variant="ghost" :to="`/books/${data.id}/useful`">
+            Полезные материалы
+          </UiNuxtBtnLink>
+        </div>
       </template>
     </UiFetchingBlock>
   </div>
@@ -39,6 +53,36 @@ useBookPageMeta(book, pending, error)
 
 <style scoped>
 .wrap {
-  padding: 1rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 24px auto 0 auto;
+  padding: 0 25px 25px 25px;
+}
+.title {
+  margin: 0 0 20px 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+.desc {
+  margin: 0 0 20px 0;
+  font-size: 1rem;
+  white-space: pre-line;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .desc {
+    font-size: 0.875rem;
+  }
+  .wrap {
+    padding: 0 1rem 1rem 1rem;
+  }
 }
 </style>

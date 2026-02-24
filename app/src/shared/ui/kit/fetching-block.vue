@@ -19,5 +19,5 @@ defineProps<Props>()
     <slot v-else name="default-error" />
   </template>
 
-  <slot v-if="!isPending && data" name="content" />
+  <slot v-if="!isPending && data" name="content" :data="data" />
 </template>
