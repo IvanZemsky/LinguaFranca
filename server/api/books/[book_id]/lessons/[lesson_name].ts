@@ -21,7 +21,6 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    console.log(getDataFileName(BASE_API_URL, "lessons", bookId, lessonName))
     const response = await fetch(
       getDataFileName(BASE_API_URL, "lessons", bookId, lessonName)
     )

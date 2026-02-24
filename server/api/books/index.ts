@@ -4,7 +4,7 @@ import { getDataFileName } from "~~/server/utils/json"
 
 export default defineEventHandler(async () => {
   try {
-    const response = await fetch(getDataFileName(BASE_API_URL, "books"))
+    const response = await fetch(getDataFileName(BASE_API_URL, "books", "list"))
     if (!response.ok) {
       throw createError({
         statusCode: response.status,

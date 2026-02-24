@@ -1,6 +1,5 @@
-import type { Section } from "~~/app/src/entities/lesson"
 import { BASE_API_URL } from "~~/server/config"
-import { getDataFileName, retrieveDataFromStorage } from "~~/server/utils/json"
+import { getDataFileName } from "~~/server/utils/json"
 
 export default defineEventHandler(async (event) => {
   const bookId = getRouterParam(event, "book_id")

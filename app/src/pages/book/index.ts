@@ -1,1 +1,2 @@
-export {useBookPageMeta} from "./model"
+export {default as BookPage} from "./book-page.vue"
+

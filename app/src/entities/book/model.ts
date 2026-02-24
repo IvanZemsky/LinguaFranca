@@ -19,3 +19,13 @@ export type Book = {
     levels: [string, string]
   }
 }
+
+export type BookInfo = Book & {
+  description: string | null
+}
+
+export type BookDescription = {
+  id: string
+  bookId: BookId
+  text: string
+}

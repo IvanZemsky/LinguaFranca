@@ -1,4 +1,4 @@
-import { type Book } from "../model"
+import { type Book, type BookInfo } from "../model"
 
 const baseUrl = "/api/books"
 
@@ -8,6 +8,6 @@ export const bookService = {
   },
 
   async fetchBookById(id: string) {
-    return await $fetch<Book | undefined>(`${baseUrl}/${id}`)
+    return await $fetch<BookInfo | undefined>(`${baseUrl}/${id}`)
   },
 }

@@ -1,11 +1,11 @@
 import type { NuxtError } from "#app"
-import type { Book } from "~/src/entities/book"
+import type { BookInfo } from "~/src/entities/book"
 import { resolveTitle } from "~/src/shared/lib"
 
 export function useBookPageMeta(
-  book: Ref<Book | undefined>,
+  book: Ref<BookInfo | undefined>,
   pending: Ref<boolean>,
-  error: Ref<NuxtError<unknown> | undefined>
+  error: Ref<NuxtError<unknown> | undefined>,
 ) {
   useHead({
     title: () =>

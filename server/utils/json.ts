@@ -5,5 +5,5 @@ export async function retrieveDataFromStorage<T>(path: string) {
 }
 
 export function getDataFileName(...strings: string[]) {
-  return [...strings].join("/") + ".json"
+  return strings.join("/") + ".json"
 }
