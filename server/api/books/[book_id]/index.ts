@@ -3,9 +3,6 @@ import { BASE_API_URL } from "~~/server/config"
 
 export default defineEventHandler(async (event) => {
   const bookId = getRouterParam(event, "book_id")
-
-  console.log("ID", bookId)
-
   if (!bookId) {
     throw createError({
       statusCode: 400,
@@ -18,7 +15,6 @@ export default defineEventHandler(async (event) => {
       getDataFileName(BASE_API_URL, "books", "list"),
     )
     if (!response.ok) {
-      console.log(response)
       throw createError({
         statusCode: response.status,
         statusMessage: `Failed to fetch books: ${response.statusText}`,
@@ -27,8 +23,6 @@ export default defineEventHandler(async (event) => {
 
     const books: Book[] = await response.json()
 
-    console.log(books)
-
     const book = books.find((book) => book.id === bookId)
     if (!book) {
       throw createError({
@@ -36,8 +30,6 @@ export default defineEventHandler(async (event) => {
         statusMessage: "Book not found",
       })
     }
-
-    console.log(book)
 
     const bookInfo: BookInfo = { ...book, description: null }
 
@@ -50,6 +42,7 @@ export default defineEventHandler(async (event) => {
     }
 
     return bookInfo
+    // need to add type
   } catch (error: any) {
     if (error?.statusCode) {
       throw error

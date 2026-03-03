@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import "./button.css"
 
+
 export type UiButtonProps = {
   as?: string
   variant?: "filled" | "ghost"

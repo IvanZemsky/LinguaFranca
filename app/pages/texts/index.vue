@@ -1,13 +1,7 @@
-<template>
-    <div>
-        Textx all
-    </div>
-</template>
-
 <script setup lang="ts">
-
+import { TextsPage } from "~/src/pages/texts"
 </script>
 
-<style scoped>
-
-</style>
+<template>
+  <TextsPage />
+</template>

@@ -11,3 +11,4 @@ export { default as UiTableRow } from "./kit/table/ui-table-row.vue"
 export { default as UiTableHead } from "./kit/table/ui-table-head.vue"
 
 export { default as UiFetchingBlock } from "./kit/fetching-block.vue"
+export { default as UiWrapper } from "./kit/ui-wrapper.vue"
