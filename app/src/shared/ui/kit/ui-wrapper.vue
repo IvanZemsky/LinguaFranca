@@ -24,7 +24,7 @@ withDefaults(defineProps<Props>(), {
   max-width: 900px;
 }
 
-.ui-wrapper--normal {
+.ui-wrapper--large {
   max-width: 1360px;
 }
 </style>
