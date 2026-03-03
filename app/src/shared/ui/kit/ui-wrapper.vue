@@ -1,17 +1,19 @@
 <script setup lang="ts">
 type Props = {
   variants?: "large" | "normal"
+  as?: string
 }
 
 withDefaults(defineProps<Props>(), {
   variants: "normal",
+  as: "div",
 })
 </script>
 
 <template>
-  <div :class="`ui-wrapper ui-wrapper--${variants}`">
+  <component :is="as" :class="`ui-wrapper ui-wrapper--${variants}`">
     <slot />
-  </div>
+  </component>
 </template>
 
 <style>

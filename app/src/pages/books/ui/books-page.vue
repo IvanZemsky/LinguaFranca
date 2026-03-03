@@ -1,39 +1,40 @@
 <script setup lang="ts">
 import { useFetchBooks } from "~/src/entities/book"
-import { UiWrapper } from "~/src/shared/ui"
-import BookCard from "./book-card.vue"
+import { useBooksPageMeta } from "../model"
+import { BookCard } from "~/src/features/book"
 
 const { data: books } = useFetchBooks()
+
+useBooksPageMeta()
 </script>
 
 <template>
-  <UiWrapper as="section" class="texts">
-    <div class="content">
-      <h1 class="title">Тексты</h1>
-      <div class="book-cards">
+  <section class="books">
+    <div class="content wrapper">
+      <h1 class="title">Самоучители</h1>
+      <div class="cards">
         <BookCard
           v-for="book in books"
           :key="book.id"
           :data="book"
-          :link="`/books/${book.id}/texts`"
-          class="book-card"
+          :link="`/books/${book.id}`"
         />
       </div>
     </div>
-  </UiWrapper>
+  </section>
 </template>
 
 <style scoped>
-.book-cards {
+.books {
   margin-top: 24px;
   padding-bottom: 24px;
 }
 .wrapper {
   padding: 0 1.5rem;
 }
-.book-cards {
-  display: flex;
-  flex-wrap: wrap;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.25rem;
 }
 .title {
